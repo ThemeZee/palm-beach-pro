@@ -118,13 +118,6 @@ class Palm_Beach_Pro_Footer_Line {
 
 			echo '<div id="footer-social-icons" class="footer-social-icons social-icons-navigation container clearfix">';
 
-			// Check if there is header bar text.
-			if ( '' !== $theme_options['footer_social_icons_text'] ) {
-
-				printf( '<h3 class="footer-social-icons-title">%s</h3>', wp_kses_post( $theme_options['footer_social_icons_text'] ) );
-
-			}
-
 			// Display Social Icons Menu.
 			wp_nav_menu( array(
 				'theme_location' => 'footer-social',
@@ -161,24 +154,6 @@ class Palm_Beach_Pro_Footer_Line {
 			)
 		);
 
-		// Add Footer Social Icons Text setting.
-		$wp_customize->add_setting( 'palm_beach_theme_options[footer_social_icons_text]', array(
-			'default'           => __( 'Stay in Touch', 'palm-beach-pro' ),
-			'type'           	=> 'option',
-			'transport'         => 'refresh',
-			'sanitize_callback' => array( __CLASS__, 'sanitize_footer_text' ),
-			)
-		);
-		$wp_customize->add_control( 'palm_beach_theme_options[footer_social_icons_text]', array(
-			'label'    => __( 'Social Icons Text', 'palm-beach-pro' ),
-			'section'  => 'palm_beach_pro_section_footer',
-			'settings' => 'palm_beach_theme_options[footer_social_icons_text]',
-			'type'     => 'text',
-			'active_callback' => array( __CLASS__, 'has_social_menu' ),
-			'priority' => 10,
-			)
-		);
-
 		// Add Footer Text setting.
 		$wp_customize->add_setting( 'palm_beach_theme_options[footer_text]', array(
 			'default'           => '',
@@ -192,7 +167,7 @@ class Palm_Beach_Pro_Footer_Line {
 			'section'  => 'palm_beach_pro_section_footer',
 			'settings' => 'palm_beach_theme_options[footer_text]',
 			'type'     => 'textarea',
-			'priority' => 20,
+			'priority' => 10,
 			)
 		);
 
@@ -209,7 +184,7 @@ class Palm_Beach_Pro_Footer_Line {
 			'section'  => 'palm_beach_pro_section_footer',
 			'settings' => 'palm_beach_theme_options[credit_link]',
 			'type'     => 'checkbox',
-			'priority' => 30,
+			'priority' => 20,
 			)
 		);
 
