@@ -1,8 +1,8 @@
 <?php
 /**
- * Magazine Posts Columns Widget
+ * Magazine Columns Widget
  *
- * Display the latest posts from two categories in a 2-column layout.
+ * Display the latest posts from two categories in a two column layout.
  * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
  *
  * @package Palm Beach Pro
@@ -11,7 +11,7 @@
 /**
  * Magazine Widget Class
  */
-class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
+class Palm_Beach_Pro_Magazine_Columns_Widget extends WP_Widget {
 
 	/**
 	 * Widget Constructor
@@ -20,10 +20,10 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 		// Setup Widget.
 		parent::__construct(
-			'palm-beach-magazine-posts-columns', // ID.
-			sprintf( esc_html__( 'Magazine Posts: 2 Columns (%s)', 'palm-beach-pro' ), 'Palm Beach Pro' ), // Name.
+			'palm-beach-magazine-columns', // ID.
+			esc_html__( 'Magazine: Columns', 'palm-beach-pro' ), // Name.
 			array(
-				'classname' => 'palm_beach_magazine_posts_columns',
+				'classname' => 'palm_beach_magazine_columns',
 				'description' => esc_html__( 'Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'palm-beach-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
@@ -33,7 +33,6 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
 		add_action( 'deleted_post', array( $this, 'delete_widget_cache' ) );
 		add_action( 'switch_theme', array( $this, 'delete_widget_cache' ) );
-
 	}
 
 	/**
@@ -48,13 +47,9 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 			'category_two_title'	=> '',
 			'number'				=> 4,
 			'highlight_post'		=> true,
-			'meta_date'				=> true,
-			'meta_author'			=> false,
-			'meta_category'			=> false,
 		);
 
 		return $defaults;
-
 	}
 
 	/**
@@ -71,7 +66,7 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 		// Get Widget Object Cache.
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_palm_beach_magazine_posts_columns', 'widget' );
+			$cache = wp_cache_get( 'widget_palm_beach_magazine_columns', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -92,7 +87,7 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 		// Output.
 		echo $args['before_widget'];
 		?>
-		<div class="widget-magazine-posts-columns widget-magazine-posts clearfix">
+		<div class="widget-magazine-columns widget-magazine-posts clearfix">
 
 			<div class="widget-magazine-posts-content clearfix">
 
@@ -108,13 +103,12 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 		// Set Cache.
 		if ( ! $this->is_preview() ) {
 			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_palm_beach_magazine_posts_columns', $cache, 'widget' );
+			wp_cache_set( 'widget_palm_beach_magazine_columns', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
 
-	} // widget()
-
+	}
 
 	/**
 	 * Renders the Widget Content
@@ -128,16 +122,16 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 	 * @param array $settings / Settings for this widget instance.
 	 */
 	function render( $args, $settings ) {
-	?>
+		?>
 
-		<div class="magazine-posts-column-left magazine-posts-columns clearfix">
+		<div class="magazine-column-left magazine-column clearfix">
 
-			<div class="magazine-posts-columns-content clearfix">
+			<div class="magazine-column-content clearfix">
 
 				<?php // Display Category Title.
 					$this->category_title( $args, $settings, $settings['category_one'], $settings['category_one_title'] ); ?>
 
-				<div class="magazine-posts-columns-post-list clearfix">
+				<div class="magazine-column-post-list clearfix">
 					<?php $this->magazine_posts( $settings, $settings['category_one'] ); ?>
 				</div>
 
@@ -145,14 +139,14 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 		</div>
 
-		<div class="magazine-posts-column-right magazine-posts-columns clearfix">
+		<div class="magazine-column-right magazine-column clearfix">
 
-			<div class="magazine-posts-columns-content clearfix">
+			<div class="magazine-column-content clearfix">
 
 				<?php // Display Category Title.
 					$this->category_title( $args, $settings, $settings['category_two'], $settings['category_two_title'] ); ?>
 
-				<div class="magazine-posts-columns-post-list clearfix">
+				<div class="magazine-column-post-list clearfix">
 					<?php $this->magazine_posts( $settings, $settings['category_two'] ); ?>
 				</div>
 
@@ -160,9 +154,8 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 		</div>
 
-	<?php
-	} // render()
-
+		<?php
+	}
 
 	/**
 	 * Display Magazine Posts Loop
@@ -189,53 +182,22 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 			// Limit the number of words for the excerpt.
 			add_filter( 'excerpt_length', array( $this, 'excerpt_length' ) );
 
+			// Display excerpt for first post.
+			set_query_var( 'palm_beach_post_excerpt', true );
+
 			// Display Posts.
 			while ( $posts_query->have_posts() ) :
 
 				$posts_query->the_post();
 
-				if ( true === $settings['highlight_post'] and 0 === $i ) : ?>
+				if ( true === $settings['highlight_post'] and 0 === $i ) :
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post clearfix' ); ?>>
+					Palm_Beach_Pro::load_theme_template( 'template-parts/widgets/magazine-content', 'large-post' );
 
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
+				else :
 
-						<header class="entry-header">
+					Palm_Beach_Pro::load_theme_template( 'template-parts/widgets/magazine-content', 'small-post' );
 
-							<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-							<?php $this->entry_meta( $settings ); ?>
-
-						</header><!-- .entry-header -->
-
-						<div class="entry-content">
-							<?php the_excerpt(); ?>
-							<?php palm_beach_more_link(); ?>
-						</div><!-- .entry-content -->
-
-					</article>
-
-				<?php else : ?>
-
-					<article id="post-<?php the_ID(); ?>" <?php post_class( 'small-post clearfix' ); ?>>
-
-						<a href="<?php the_permalink() ?>" rel="bookmark"><?php the_post_thumbnail(); ?></a>
-
-						<div class="small-post-content">
-
-							<header class="entry-header">
-
-								<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
-
-								<?php $this->entry_meta( $settings ); ?>
-
-							</header><!-- .entry-header -->
-
-						</div>
-
-					</article>
-
-				<?php
 				endif; $i++;
 
 			endwhile;
@@ -248,44 +210,7 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 		// Reset Postdata.
 		wp_reset_postdata();
 
-	} // magazine_posts()
-
-
-	/**
-	 * Displays Entry Meta of Posts
-	 *
-	 * @param array $settings / Settings for this widget instance.
-	 */
-	function entry_meta( $settings ) {
-
-		$postmeta = '';
-
-		if ( true === $settings['meta_date'] ) {
-
-			$postmeta .= palm_beach_meta_date();
-
-		}
-
-		if ( true === $settings['meta_author'] ) {
-
-			$postmeta .= palm_beach_meta_author();
-
-		}
-
-		if ( true === $settings['meta_category'] ) {
-
-			$postmeta .= palm_beach_meta_category();
-
-		}
-
-		if ( $postmeta ) {
-
-			echo '<div class="entry-meta">' . $postmeta . '</div>';
-
-		}
-
-	} // entry_meta()
-
+	}
 
 	/**
 	 * Displays Category Widget Title
@@ -306,12 +231,12 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 			if ( $category_id > 0 ) :
 
 				// Set Link URL and Title for Category.
-				$link_title = sprintf( esc_html__( 'View all posts from category %s', 'palm-beach-pro' ), get_cat_name( $category_id ) );
-				$link_url = esc_url( get_category_link( $category_id ) );
+				$link_title = sprintf( __( 'View all posts from category %s', 'palm-beach-pro' ), get_cat_name( $category_id ) );
+				$link_url = get_category_link( $category_id );
 
 				// Display Widget Title with link to category archive.
 				echo '<div class="widget-header">';
-				echo '<h3 class="widget-title"><a class="category-archive-link" href="'. $link_url .'" title="'. $link_title . '">'. $widget_title . '</a></h3>';
+				echo '<h3 class="widget-title"><a class="category-archive-link" href="' . esc_url( $link_url ) . '" title="' . esc_attr( $link_title ) . '">' . $widget_title . '</a></h3>';
 				echo '<div class="category-description">' . category_description( $category_id ) . '</div>';
 				echo '</div>';
 
@@ -324,8 +249,7 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 
 		endif;
 
-	} // category_title()
-
+	}
 
 	/**
 	 * Returns the excerpt length in number of words
@@ -353,9 +277,6 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 		$instance['category_two'] = (int) $new_instance['category_two'];
 		$instance['number'] = (int) $new_instance['number'];
 		$instance['highlight_post'] = ! empty( $new_instance['highlight_post'] );
-		$instance['meta_date'] = ! empty( $new_instance['meta_date'] );
-		$instance['meta_author'] = ! empty( $new_instance['meta_author'] );
-		$instance['meta_category'] = ! empty( $new_instance['meta_category'] );
 
 		$this->delete_widget_cache();
 
@@ -428,37 +349,15 @@ class Palm_Beach_Pro_Magazine_Posts_Columns_Widget extends WP_Widget {
 			</label>
 		</p>
 
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_date' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_date'] ); ?> id="<?php echo $this->get_field_id( 'meta_date' ); ?>" name="<?php echo $this->get_field_name( 'meta_date' ); ?>" />
-				<?php esc_html_e( 'Display post date', 'palm-beach-pro' ); ?>
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_author' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_author'] ); ?> id="<?php echo $this->get_field_id( 'meta_author' ); ?>" name="<?php echo $this->get_field_name( 'meta_author' ); ?>" />
-				<?php esc_html_e( 'Display post author', 'palm-beach-pro' ); ?>
-			</label>
-		</p>
-
-		<p>
-			<label for="<?php echo $this->get_field_id( 'meta_category' ); ?>">
-				<input class="checkbox" type="checkbox" <?php checked( $settings['meta_category'] ); ?> id="<?php echo $this->get_field_id( 'meta_category' ); ?>" name="<?php echo $this->get_field_name( 'meta_category' ); ?>" />
-				<?php esc_html_e( 'Display post categories', 'palm-beach-pro' ); ?>
-			</label>
-		</p>
-
-	<?php
-	} // form()
-
+		<?php
+	}
 
 	/**
 	 * Delete Widget Cache
 	 */
 	public function delete_widget_cache() {
 
-		wp_cache_delete( 'widget_palm_beach_magazine_posts_columns', 'widget' );
+		wp_cache_delete( 'widget_palm_beach_magazine_columns', 'widget' );
 
 	}
 }

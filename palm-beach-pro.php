@@ -116,8 +116,9 @@ class Palm_Beach_Pro {
 		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/modules/class-header-bar.php';
 
 		// Include Magazine Widgets.
-		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-boxed.php';
-		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-posts-columns.php';
+		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-columns.php';
+		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-horizontal-box.php';
+		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-vertical-box.php';
 
 	}
 
@@ -188,9 +189,9 @@ class Palm_Beach_Pro {
 			return;
 		}
 
-		register_widget( 'Palm_Beach_Pro_Magazine_Posts_Boxed_Widget' );
-		register_widget( 'Palm_Beach_Pro_Magazine_Posts_Columns_Widget' );
-
+		register_widget( 'Palm_Beach_Pro_Magazine_Columns_Widget' );
+		register_widget( 'Palm_Beach_Pro_Magazine_Horizontal_Box_Widget' );
+		register_widget( 'Palm_Beach_Pro_Magazine_Vertical_Box_Widget' );
 	}
 
 	/**
@@ -204,6 +205,40 @@ class Palm_Beach_Pro {
 		$settings_link = array( 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=palm-beach-pro' ), __( 'Settings', 'palm-beach-pro' ) ) );
 
 		return array_merge( $settings_link, $actions );
+	}
+
+
+	/**
+	 * Load Template Files from the current theme or child theme
+	 *
+	 * @param string $template Template Name.
+	 */
+	static function load_theme_template( $slug, $name = null ) {
+
+		// Setup Template.
+		if ( isset( $name ) ) {
+			$template = $slug . '-' . $name . '.php';
+		} else {
+			$template = $slug . '.php';
+		}
+
+		$located = false;
+
+		// Check child theme for template first, then parent theme.
+		if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $template ) ) {
+
+			$located = trailingslashit( get_stylesheet_directory() ) . $template;
+
+		} elseif ( file_exists( trailingslashit( get_template_directory() ) . $template ) ) {
+
+			$located = trailingslashit( get_template_directory() ) . $template;
+
+		}
+
+		// Load Theme Template.
+		if ( ! empty( $located ) ) {
+			load_template( $located, false );
+		}
 	}
 
 	/**
