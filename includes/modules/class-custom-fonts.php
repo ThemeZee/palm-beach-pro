@@ -63,11 +63,10 @@ class Palm_Beach_Pro_Custom_Fonts {
 			$custom_css .= '
 				/* Base Font Setting */
 				body,
-				button,
 				input,
 				select,
 				textarea {
-					font-family: "'.esc_attr( $theme_options['text_font'] ).'";
+					font-family: "' . esc_attr( $theme_options['text_font'] ) . '";
 				}
 				';
 
@@ -79,10 +78,25 @@ class Palm_Beach_Pro_Custom_Fonts {
 			$custom_css .= '
 				/* Title Font Setting */
 				.site-title,
+				.header-title,
 				.archive-title,
 				.page-title,
-				.entry-title {
-					font-family: "'.esc_attr( $theme_options['title_font'] ).'";
+				.entry-title,
+				.comments-header .comments-title,
+				.comment-reply-title span,
+				.widget-title,
+				button,
+				input[type="button"],
+				input[type="reset"],
+				input[type="submit"],
+				.more-link,
+				.entry-tags .tags-title,
+				.post-navigation .nav-links a,
+				.pagination a,
+				.pagination .current,
+				.comment-navigation a,
+				.reply .comment-reply-link {
+					font-family: "' . esc_attr( $theme_options['title_font'] ) . '";
 				}
 				';
 
@@ -93,22 +107,10 @@ class Palm_Beach_Pro_Custom_Fonts {
 
 			$custom_css .= '
 				/* Navigation Font Setting */
-				.main-navigation-menu a {
-					font-family: "'.esc_attr( $theme_options['navi_font'] ).'";
-				}
-				';
-
-		}
-
-		// Set Widget Title Font.
-		if ( $theme_options['widget_title_font'] != $default_options['widget_title_font'] ) {
-
-			$custom_css .= '
-				/* Widget Titles Font Setting */
-				.comments-header .comments-title,
-				.comment-reply-title span,
-				.widget-title {
-					font-family: "'.esc_attr( $theme_options['widget_title_font'] ).'";
+				.top-navigation-menu a,
+				.main-navigation-menu a,
+				.footer-navigation-menu a {
+					font-family: "' . esc_attr( $theme_options['navi_font'] ) . '";
 				}
 				';
 
@@ -160,14 +162,6 @@ class Palm_Beach_Pro_Custom_Fonts {
 
 			$google_font_families[] = $theme_options['navi_font'] . $font_styles;
 			$default_fonts[] = $theme_options['navi_font'];
-
-		}
-
-		// Add Widget Title Font.
-		if ( isset( $theme_options['widget_title_font'] ) and ! in_array( $theme_options['widget_title_font'], $default_fonts ) ) {
-
-			$google_font_families[] = $theme_options['widget_title_font'] . $font_styles;
-			$default_fonts[] = $theme_options['widget_title_font'];
 
 		}
 
@@ -250,22 +244,6 @@ class Palm_Beach_Pro_Custom_Fonts {
 				'section'    => 'palm_beach_pro_section_fonts',
 				'settings'   => 'palm_beach_theme_options[navi_font]',
 				'priority' => 3,
-			)
-		) );
-
-		$wp_customize->add_setting( 'palm_beach_theme_options[widget_title_font]', array(
-			'default'           => $default_options['widget_title_font'],
-			'type'           	=> 'option',
-			'transport'         => 'postMessage',
-			'sanitize_callback' => 'esc_attr',
-			)
-		);
-		$wp_customize->add_control( new Palm_Beach_Pro_Customize_Font_Control(
-			$wp_customize, 'widget_title_font', array(
-				'label'      => _x( 'Widget Titles', 'font setting', 'palm-beach-pro' ),
-				'section'    => 'palm_beach_pro_section_fonts',
-				'settings'   => 'palm_beach_theme_options[widget_title_font]',
-				'priority' => 4,
 			)
 		) );
 

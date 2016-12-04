@@ -69,10 +69,9 @@ class Palm_Beach_Pro_Customizer {
 			'content_secondary_color'			=> '#4477aa',
 			'footer_widgets_color'				=> '#111133',
 			'footer_color'						=> '#111133',
-			'text_font' 						=> 'Roboto',
-			'title_font' 						=> 'Roboto Slab',
-			'navi_font' 						=> 'Roboto',
-			'widget_title_font' 				=> 'Roboto Slab',
+			'text_font' 						=> 'Hind',
+			'title_font' 						=> 'Montserrat',
+			'navi_font' 						=> 'Hind',
 			'available_fonts'					=> 'favorites',
 		);
 
