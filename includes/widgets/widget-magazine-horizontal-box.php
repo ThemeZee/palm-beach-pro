@@ -115,7 +115,7 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 		if ( $posts_query->have_posts() ) :
 
 			// Limit the number of words for the excerpt.
-			add_filter( 'excerpt_length', array( $this, 'excerpt_length_large_post' ) );
+			add_filter( 'excerpt_length', 'palm_beach_magazine_posts_excerpt_length' );
 
 			// Display Posts.
 			while ( $posts_query->have_posts() ) : $posts_query->the_post();
@@ -145,33 +145,13 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 			echo '</div><!-- end .magazine-three-columns -->';
 
 			// Remove excerpt filter.
-			remove_filter( 'excerpt_length', array( $this, 'excerpt_length_large_post' ) );
+			remove_filter( 'excerpt_length', 'palm_beach_magazine_posts_excerpt_length' );
 
 		endif;
 
 		// Reset Postdata.
 		wp_reset_postdata();
 
-	}
-
-	/**
-	 * Returns the excerpt length in number of words
-	 *
-	 * @param int $length Length of excerpt in number of words.
-	 * @return integer $this->excerpt_length Number of Words
-	 */
-	function excerpt_length_large_post( $length ) {
-		return 30;
-	}
-
-	/**
-	 * Returns the excerpt length in number of words
-	 *
-	 * @param int $length Length of excerpt in number of words.
-	 * @return integer $this->excerpt_length Number of Words
-	 */
-	function excerpt_length( $length ) {
-		return 10;
 	}
 
 	/**
