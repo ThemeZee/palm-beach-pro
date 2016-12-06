@@ -49,40 +49,14 @@ class Palm_Beach_Pro_Custom_Colors {
 		// Get Default Fonts from settings.
 		$default_options = Palm_Beach_Pro_Customizer::get_default_options();
 
-		// Set Top Navigation Color.
-		if ( $theme_options['top_navi_color'] != $default_options['top_navi_color'] ) {
+		// Set Title Color.
+		if ( $theme_options['title_color'] != $default_options['title_color'] ) {
 
 			$custom_css .= '
-				/* Top Navigation Color Setting */
-				.header-bar-wrap,
-				.top-navigation-menu ul {
-					background: '. $theme_options['top_navi_color'] .';
-				}
-				';
-
-		}
-
-		// Set Header Color.
-		if ( $theme_options['header_color'] != $default_options['header_color'] ) {
-
-			$custom_css .= '
-				/* Header Color Setting */
-				.site-header,
-				.main-navigation-menu ul {
-					background: '. $theme_options['header_color'] .';
-				}
-				';
-
-		}
-
-		// Set Primary Content Color.
-		if ( $theme_options['content_primary_color'] != $default_options['content_primary_color'] ) {
-
-			$custom_css .= '
-				/* Content Primary Color Setting */
 				.widget-title,
 				.widget-title a:link,
 				.widget-title a:visited,
+				.header-title-background .page-header .header-title,
 				.archive-title,
 				.page-title,
 				.entry-title,
@@ -91,46 +65,46 @@ class Palm_Beach_Pro_Custom_Colors {
 				.comments-header .comments-title,
 				.comment-reply-title span,
 				.related-posts-title {
-					color: '. $theme_options['content_primary_color'] .';
+					color: ' . $theme_options['title_color'] . ';
 				}
 
-				button,
-				input[type="button"],
-				input[type="reset"],
-				input[type="submit"],
-				.more-link,
-				.post-navigation .nav-links a,
-				.post-pagination a,
-				.post-pagination .current,
-				.infinite-scroll #infinite-handle span,
-				.reply .comment-reply-link,
-				.tzwb-tabbed-content .tzwb-tabnavi li a {
-					background: '. $theme_options['content_primary_color'] .';
-				}
-
-				.widget-header,
-				.comments-header,
-				.comment-reply-title,
-				.related-posts-header {
-					border-left: 6px solid '. $theme_options['content_primary_color'] .';
-				}
-				';
-
-		}
-
-		// Set Link Color.
-		if ( $theme_options['content_secondary_color'] != $default_options['content_secondary_color'] ) {
-
-			$custom_css .= '
-				/* Content Secondary Color Setting */
-				a,
-				a:link,
-				a:visited,
 				.widget-title a:hover,
 				.widget-title a:active,
 				.entry-title a:hover,
 				.entry-title a:active {
-					color: '. $theme_options['content_secondary_color'] .';
+					color: #57b7d7;
+				}
+				';
+		}
+
+		// Set Primary Content Color.
+		if ( $theme_options['link_color'] != $default_options['link_color'] ) {
+
+			$custom_css .= '
+				a,
+				a:link,
+				a:visited,
+				.site-title a:hover,
+				.site-title a:active,
+				.main-navigation-menu a:hover,
+				.main-navigation-menu a:active,
+				.main-navigation-toggle:hover,
+				.main-navigation-toggle:active,
+				.main-navigation-menu .submenu-dropdown-toggle:hover,
+				.widget-title a:hover,
+				.widget-title a:active,
+				.entry-title a:hover,
+				.entry-title a:active,
+				.footer-navigation-menu a:hover,
+				.footer-navigation-menu a:active,
+				.footer-social-icons .social-icons-menu li a:hover:before {
+					color: ' . $theme_options['link_color'] . ';
+				}
+
+				a:hover,
+				a:focus,
+				a:active {
+					color: #242424;
 				}
 
 				button:hover,
@@ -148,13 +122,16 @@ class Palm_Beach_Pro_Custom_Colors {
 				.more-link:hover,
 				.more-link:focus,
 				.more-link:active,
-				.widget_tag_cloud .tagcloud a,
-				.entry-tags .meta-tags a,
+				.widget_tag_cloud .tagcloud a:hover,
+				.widget_tag_cloud .tagcloud a:active,
+				.entry-tags .tags-title,
+				.entry-tags .meta-tags a:hover,
+				.entry-tags .meta-tags a:active,
 				.post-navigation .nav-links a:hover,
 				.post-navigation .nav-links a:active,
-				.post-pagination a:hover,
-				.post-pagination a:active,
-				.post-pagination .current,
+				.pagination a:hover,
+				.pagination a:active,
+				.pagination .current,
 				.infinite-scroll #infinite-handle span:hover,
 				.infinite-scroll #infinite-handle span:active,
 				.reply .comment-reply-link:hover,
@@ -162,60 +139,191 @@ class Palm_Beach_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a:hover,
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
-				.tzwb-social-icons .social-icons-menu li a {
-					background: '. $theme_options['content_secondary_color'] .';
-				}
-				';
-
-		}
-
-		// Set Primary Content Color.
-		if ( $theme_options['content_primary_color'] != $default_options['content_primary_color'] ) {
-
-			$custom_css .= '
-				/* Content Primary Color Setting */
-				a:hover,
-				a:focus,
-				a:active {
-					color: '. $theme_options['content_primary_color'] .';
+				.tzwb-social-icons .social-icons-menu li a:link,
+				.tzwb-social-icons .social-icons-menu li a:visited {
+					border-color: ' . $theme_options['link_color'] . ';
+					background: ' . $theme_options['link_color'] . ';
 				}
 
-				.widget_tag_cloud .tagcloud a:hover,
-				.widget_tag_cloud .tagcloud a:active,
-				.entry-tags .meta-tags a:hover,
-				.entry-tags .meta-tags a:active,
 				.tzwb-social-icons .social-icons-menu li a:hover,
 				.tzwb-social-icons .social-icons-menu li a:active {
-					background: '. $theme_options['content_primary_color'] .';
+					background: #242424;
+				}
+				';
+		}
+
+		// Set Top Navigation Color.
+		if ( $theme_options['top_navi_color'] != $default_options['top_navi_color'] ) {
+
+			$custom_css .= '
+				.header-bar-wrap,
+				.top-navigation-menu ul {
+					background: ' . $theme_options['top_navi_color'] . ';
 				}
 				';
 
+			// Check if a light background color was chosen.
+			if ( self::is_color_light( $theme_options['top_navi_color'] ) ) {
+				$custom_css .= '
+					.top-navigation-menu a:link,
+					.top-navigation-menu a:visited,
+					.top-navigation-toggle,
+					.top-navigation-toggle:focus,
+					.top-navigation-menu .submenu-dropdown-toggle,
+					.header-bar .social-icons-menu li a:link,
+					.header-bar .social-icons-menu li a:visited {
+					    color: #000;
+					}
+
+					.top-navigation-menu a:hover,
+					.top-navigation-menu a:active,
+					.top-navigation-toggle:hover,
+					.top-navigation-toggle:active,
+					.top-navigation-menu .submenu-dropdown-toggle:hover,
+					.top-navigation-menu .submenu-dropdown-toggle:active,
+					.header-bar .social-icons-menu li a:hover,
+					.header-bar .social-icons-menu li a:active {
+						color: rgba(0,0,0,0.4);
+					}
+					';
+			}
+		}
+
+		// Set Header Color.
+		if ( $theme_options['header_color'] != $default_options['header_color'] ) {
+
+			$custom_css .= '
+				.site-header,
+				.main-navigation-menu ul {
+					background: ' . $theme_options['header_color'] . ';
+				}
+				.site-header {
+					border-bottom: 1px solid rgba(0,0,0,0.075);
+				}
+				.main-navigation-menu ul {
+					border: 1px solid  rgba(0,0,0,0.075);
+				}
+				.main-navigation-menu ul a {
+					background: rgba(0,0,0,0.025);
+				}
+
+				@media only screen and (max-width: 60em) {
+					.main-navigation-menu {
+						border-top: 1px solid rgba(0,0,0,0.1);
+					}
+				}
+				';
+
+			// Check if a dark background color was chosen.
+			if ( self::is_color_dark( $theme_options['header_color'] ) ) {
+				$custom_css .= '
+					.site-title a:link,
+					.site-title a:visited,
+					.main-navigation-menu a:link,
+					.main-navigation-menu a:visited,
+					.main-navigation-toggle,
+					.main-navigation-toggle:focus,
+					.main-navigation-menu .submenu-dropdown-toggle {
+					    color: #fff;
+					}
+
+					.site-title a:hover,
+					.site-title a:active,
+					.main-navigation-menu a:hover,
+					.main-navigation-menu a:active,
+					.main-navigation-toggle:hover,
+					.main-navigation-toggle:active,
+					.main-navigation-menu .submenu-dropdown-toggle:hover,
+					.main-navigation-menu .submenu-dropdown-toggle:active {
+						color: rgba(255,255,255,0.5);
+					}
+
+					@media only screen and (max-width: 60em) {
+						.main-navigation-menu {
+							border-top: 1px solid rgba(255,255,255,0.1);
+						}
+					}
+					';
+			}
 		}
 
 		// Set Footer Widgets Color.
 		if ( $theme_options['footer_widgets_color'] != $default_options['footer_widgets_color'] ) {
 
 			$custom_css .= '
-
-				/* Footer Widget Color Setting */
-				.footer-widgets-wrap {
-					background: '. $theme_options['footer_widgets_color'] .';
+				.footer-widgets-background {
+					background: ' . $theme_options['footer_widgets_color'] . ';
 				}
 				';
 
+			// Check if a light background color was chosen.
+			if ( self::is_color_light( $theme_options['footer_widgets_color'] ) ) {
+				$custom_css .= '
+					.footer-widgets-background {
+						border-top: 1px solid rgba(0,0,0,0.1);
+					}
+
+					.footer-widgets .widget,
+					.footer-widgets .widget-title,
+					.footer-widgets .widget a:link,
+					.footer-widgets .widget a:visited  {
+						color: rgba(0,0,0,0.75);
+					}
+
+					.footer-widgets .widget a:hover,
+					.footer-widgets .widget a:active  {
+						color: rgba(0,0,0,0.5);
+					}
+					';
+			}
 		}
 
 		// Set Footer Color.
 		if ( $theme_options['footer_color'] != $default_options['footer_color'] ) {
 
 			$custom_css .= '
-
-				/* Footer Color Setting */
 				.footer-wrap {
-					background: '. $theme_options['footer_color'] .';
+					background: ' . $theme_options['footer_color'] . ';
+					border-top: 1px solid rgba(0,0,0,0.1);
+				}
+
+				.site-footer .site-info a:link,
+				.site-footer .site-info a:visited,
+				.footer-navigation-menu a:link,
+				.footer-navigation-menu a:visited {
+					color: rgba(0,0,0,0.5);
+				}
+
+				.site-footer .site-info a:hover,
+				.site-footer .site-info a:active,
+				.footer-navigation-menu a:hover,
+				.footer-navigation-menu a:active {
+					color: rgba(0,0,0,0.75);
 				}
 				';
 
+			// Check if a dark background color was chosen.
+			if ( self::is_color_dark( $theme_options['footer_color'] ) ) {
+				$custom_css .= '
+					.site-footer {
+						color: #fff;
+					}
+
+					.site-footer .site-info a:link,
+					.site-footer .site-info a:visited,
+					.footer-navigation-menu a:link,
+					.footer-navigation-menu a:visited {
+						color: rgba(255,255,255,0.5)
+					}
+
+					.site-footer .site-info a:hover,
+					.site-footer .site-info a:active,
+					.footer-navigation-menu a:hover,
+					.footer-navigation-menu a:active {
+						color: rgba(255,255,255,0.75);
+					}
+					';
+			}
 		}
 
 		return $custom_css;
@@ -253,7 +361,7 @@ class Palm_Beach_Pro_Custom_Colors {
 				'label'      => _x( 'Top Navigation', 'color setting', 'palm-beach-pro' ),
 				'section'    => 'palm_beach_pro_section_colors',
 				'settings'   => 'palm_beach_theme_options[top_navi_color]',
-				'priority' => 1,
+				'priority' => 10,
 			)
 		) );
 
@@ -270,41 +378,41 @@ class Palm_Beach_Pro_Custom_Colors {
 				'label'      => _x( 'Header', 'color setting', 'palm-beach-pro' ),
 				'section'    => 'palm_beach_pro_section_colors',
 				'settings'   => 'palm_beach_theme_options[header_color]',
-				'priority' => 2,
+				'priority' => 20,
 			)
 		) );
 
 		// Add Content Primary Color setting.
-		$wp_customize->add_setting( 'palm_beach_theme_options[content_primary_color]', array(
-			'default'           => $default_options['content_primary_color'],
+		$wp_customize->add_setting( 'palm_beach_theme_options[link_color]', array(
+			'default'           => $default_options['link_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'sanitize_hex_color',
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'palm_beach_theme_options[content_primary_color]', array(
-				'label'      => _x( 'Content (primary)', 'color setting', 'palm-beach-pro' ),
+			$wp_customize, 'palm_beach_theme_options[link_color]', array(
+				'label'      => _x( 'Links and Buttons', 'color setting', 'palm-beach-pro' ),
 				'section'    => 'palm_beach_pro_section_colors',
-				'settings'   => 'palm_beach_theme_options[content_primary_color]',
-				'priority' => 3,
+				'settings'   => 'palm_beach_theme_options[link_color]',
+				'priority' => 30,
 			)
 		) );
 
 		// Add Content Secondary Color setting.
-		$wp_customize->add_setting( 'palm_beach_theme_options[content_secondary_color]', array(
-			'default'           => $default_options['content_secondary_color'],
+		$wp_customize->add_setting( 'palm_beach_theme_options[title_color]', array(
+			'default'           => $default_options['title_color'],
 			'type'           	=> 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'sanitize_hex_color',
 			)
 		);
 		$wp_customize->add_control( new WP_Customize_Color_Control(
-			$wp_customize, 'palm_beach_theme_options[content_secondary_color]', array(
-				'label'      => _x( 'Content (secondary)', 'color setting', 'palm-beach-pro' ),
+			$wp_customize, 'palm_beach_theme_options[title_color]', array(
+				'label'      => _x( 'Headings', 'color setting', 'palm-beach-pro' ),
 				'section'    => 'palm_beach_pro_section_colors',
-				'settings'   => 'palm_beach_theme_options[content_secondary_color]',
-				'priority' => 4,
+				'settings'   => 'palm_beach_theme_options[title_color]',
+				'priority' => 40,
 			)
 		) );
 
@@ -321,7 +429,7 @@ class Palm_Beach_Pro_Custom_Colors {
 				'label'      => _x( 'Footer Widgets', 'color setting', 'palm-beach-pro' ),
 				'section'    => 'palm_beach_pro_section_colors',
 				'settings'   => 'palm_beach_theme_options[footer_widgets_color]',
-				'priority' => 5,
+				'priority' => 50,
 			)
 		) );
 
@@ -338,10 +446,46 @@ class Palm_Beach_Pro_Custom_Colors {
 				'label'      => _x( 'Footer', 'color setting', 'palm-beach-pro' ),
 				'section'    => 'palm_beach_pro_section_colors',
 				'settings'   => 'palm_beach_theme_options[footer_color]',
-				'priority' => 6,
+				'priority' => 60,
 			)
 		) );
 
+	}
+
+	/**
+	 * Returns color brightness.
+	 *
+	 * @param int Number of brightness.
+	 */
+	static function get_color_brightness( $hex_color ) {
+
+		// Remove # string.
+		$hex_color = str_replace( '#', '', $hex_color );
+
+		// Convert into RGB.
+		$r = hexdec( substr( $hex_color, 0, 2 ) );
+		$g = hexdec( substr( $hex_color, 2, 2 ) );
+		$b = hexdec( substr( $hex_color, 4, 2 ) );
+
+		return ( ( ( $r * 299 ) + ( $g * 587 ) + ( $b * 114 ) ) / 1000 );
+	}
+
+	/**
+	 * Check if the color is light.
+	 *
+	 * @param bool True if color is light.
+	 */
+	static function is_color_light( $hex_color ) {
+		return ( self::get_color_brightness( $hex_color ) > 130 );
+	}
+
+	/**
+	 * Check if the color is dark.
+	 *
+	 * @param bool True if color is dark.
+	 */
+	static function is_color_dark( $hex_color ) {
+		return ( self::get_color_brightness( $hex_color ) <= 130 );
 	}
 }
 

@@ -59,20 +59,20 @@ class Palm_Beach_Pro_Customizer {
 	static function get_default_options() {
 
 		$default_options = array(
-			'logo_spacing'						=> 10,
-			'navi_spacing'						=> 10,
-			'footer_text'						=> '',
-			'credit_link' 						=> true,
-			'top_navi_color'					=> '#4477aa',
-			'header_color'						=> '#111133',
-			'content_primary_color'				=> '#111133',
-			'content_secondary_color'			=> '#4477aa',
-			'footer_widgets_color'				=> '#111133',
-			'footer_color'						=> '#111133',
-			'text_font' 						=> 'Hind',
-			'title_font' 						=> 'Montserrat',
-			'navi_font' 						=> 'Hind',
-			'available_fonts'					=> 'favorites',
+			'logo_spacing'         => 10,
+			'navi_spacing'         => 10,
+			'footer_text'          => '',
+			'credit_link'          => true,
+			'top_navi_color'       => '#242424',
+			'header_color'         => '#ffffff',
+			'link_color'           => '#57b7d7',
+			'title_color'          => '#242424',
+			'footer_widgets_color' => '#242424',
+			'footer_color'         => '#ffffff',
+			'text_font'            => 'Hind',
+			'title_font'           => 'Montserrat',
+			'navi_font'            => 'Hind',
+			'available_fonts'      => 'favorites',
 		);
 
 		return $default_options;
