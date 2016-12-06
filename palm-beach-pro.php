@@ -65,7 +65,7 @@ class Palm_Beach_Pro {
 		define( 'PALM_BEACH_PRO_VERSION', '1.0' );
 
 		// Define Plugin Name.
-		define( 'PALM_BEACH_PRO_PRODUCT_ID', 62420 );
+		define( 'PALM_BEACH_PRO_PRODUCT_ID', 89731 );
 
 		// Define Update API URL.
 		define( 'PALM_BEACH_PRO_STORE_API_URL', 'https://themezee.com' );
