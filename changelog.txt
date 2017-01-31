@@ -2,6 +2,11 @@
 Palm Beach Pro Changelog
 ===================================
 
+Version 1.0.1
+-----------------------------------
+* changed HTML markup of header bar
+* updated EDD Plugin Updater class
+
 Version 1.0
 -----------------------------------
 Initial Version
