@@ -21,19 +21,13 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 		// Setup Widget.
 		parent::__construct(
 			'palm-beach-magazine-horizontal-box', // ID.
-			esc_html__( 'Magazine: Horizontal Box', 'palm-beach-pro' ), // Name.
+			esc_html__( 'Magazine (Horizontal Box)', 'palm-beach-pro' ), // Name.
 			array(
-				'classname' => 'palm_beach_magazine_horizontal_box',
+				'classname' => 'palm-beach-magazine-horizontal-box-widget',
 				'description' => esc_html__( 'Displays your posts from a selected category in a horizontal box layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'palm-beach-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
-
-		// Delete Widget Cache on certain actions.
-		add_action( 'save_post', array( $this, 'delete_widget_cache' ) );
-		add_action( 'deleted_post', array( $this, 'delete_widget_cache' ) );
-		add_action( 'switch_theme', array( $this, 'delete_widget_cache' ) );
-
 	}
 
 	/**
@@ -47,7 +41,6 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 		);
 
 		return $defaults;
-
 	}
 
 	/**
@@ -85,9 +78,8 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 		<?php
 		echo $args['after_widget'];
 
-		// Set Cache.
+		// End Output Buffering.
 		ob_end_flush();
-
 	}
 
 	/**
@@ -102,14 +94,15 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 	 */
 	function render( $settings ) {
 
-		// Get latest posts from database.
+		// Get cached post ids.
+		$post_ids = palm_beach_get_magazine_post_ids( $this->id, $settings['category'], 4 );
+
+		// Fetch posts from database.
 		$query_arguments = array(
-			'posts_per_page' => 4,
-			'ignore_sticky_posts' => true,
-			'cat' => (int) $settings['category'],
+			'post__in'            => $post_ids,
+			'no_found_rows'       => true,
 		);
 		$posts_query = new WP_Query( $query_arguments );
-		$i = 0;
 
 		// Check if there are posts.
 		if ( $posts_query->have_posts() ) :
@@ -120,12 +113,13 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 			// Display Posts.
 			while ( $posts_query->have_posts() ) : $posts_query->the_post();
 
-				if ( 0 === $i ) :
+				// Display first post differently.
+				if ( 0 === $posts_query->current_post ) :
 
 					// Display excerpt for first post.
 					set_query_var( 'palm_beach_post_excerpt', true );
 
-					Palm_Beach_Pro::load_theme_template( 'template-parts/widgets/magazine-content', 'large-post' );
+					get_template_part( 'template-parts/widgets/magazine-large-post', 'vertical-box' );
 
 					echo '<div class="magazine-grid magazine-grid-three-columns clearfix">';
 
@@ -135,10 +129,10 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 				else :
 
 					echo '<div class="post-column">';
-					Palm_Beach_Pro::load_theme_template( 'template-parts/widgets/magazine-content', 'medium-post' );
+					get_template_part( 'template-parts/widgets/magazine-medium-post', 'vertical-box' );
 					echo '</div>';
 
-				endif; $i++;
+				endif;
 
 			endwhile;
 
@@ -151,7 +145,6 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 
 		// Reset Postdata.
 		wp_reset_postdata();
-
 	}
 
 	/**
@@ -188,9 +181,7 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 			endif;
 
 		endif;
-
-	} // widget_title()
-
+	}
 
 	/**
 	 * Update Widget Settings
@@ -205,7 +196,7 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 		$instance['title'] = sanitize_text_field( $new_instance['title'] );
 		$instance['category'] = (int) $new_instance['category'];
 
-		$this->delete_widget_cache();
+		palm_beach_flush_magazine_post_ids();
 
 		return $instance;
 	}
@@ -223,7 +214,7 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'palm-beach-pro' ); ?>
-				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $settings['title']; ?>" />
+				<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $settings['title'] ); ?>" />
 			</label>
 		</p>
 
@@ -242,16 +233,6 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 			?>
 		</p>
 
-	<?php
-	} // form()
-
-
-	/**
-	 * Delete Widget Cache
-	 */
-	public function delete_widget_cache() {
-
-		wp_cache_delete( 'widget_palm_beach_magazine_horizontal_box', 'widget' );
-
+		<?php
 	}
 }
