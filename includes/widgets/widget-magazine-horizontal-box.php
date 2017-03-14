@@ -85,9 +85,6 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 	/**
 	 * Renders the Widget Content
 	 *
-	 * Switches between horizontal and vertical layout style based on widget settings
-	 *
-	 * @uses this->magazine_posts_horizontal() or this->magazine_posts_vertical()
 	 * @used-by this->widget()
 	 *
 	 * @param array $settings / Settings for this widget instance.
@@ -119,7 +116,7 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 					// Display excerpt for first post.
 					set_query_var( 'palm_beach_post_excerpt', true );
 
-					get_template_part( 'template-parts/widgets/magazine-large-post', 'vertical-box' );
+					get_template_part( 'template-parts/widgets/magazine-large-post', 'horizontal-box' );
 
 					echo '<div class="magazine-grid magazine-grid-three-columns clearfix">';
 
@@ -129,7 +126,7 @@ class Palm_Beach_Pro_Magazine_Horizontal_Box_Widget extends WP_Widget {
 				else :
 
 					echo '<div class="post-column">';
-					get_template_part( 'template-parts/widgets/magazine-medium-post', 'vertical-box' );
+					get_template_part( 'template-parts/widgets/magazine-medium-post', 'horizontal-box' );
 					echo '</div>';
 
 				endif;

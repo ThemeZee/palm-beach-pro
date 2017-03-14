@@ -207,40 +207,6 @@ class Palm_Beach_Pro {
 		return array_merge( $settings_link, $actions );
 	}
 
-
-	/**
-	 * Load Template Files from the current theme or child theme
-	 *
-	 * @param string $template Template Name.
-	 */
-	static function load_theme_template( $slug, $name = null ) {
-
-		// Setup Template.
-		if ( isset( $name ) ) {
-			$template = $slug . '-' . $name . '.php';
-		} else {
-			$template = $slug . '.php';
-		}
-
-		$located = false;
-
-		// Check child theme for template first, then parent theme.
-		if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $template ) ) {
-
-			$located = trailingslashit( get_stylesheet_directory() ) . $template;
-
-		} elseif ( file_exists( trailingslashit( get_template_directory() ) . $template ) ) {
-
-			$located = trailingslashit( get_template_directory() ) . $template;
-
-		}
-
-		// Load Theme Template.
-		if ( ! empty( $located ) ) {
-			load_template( $located, false );
-		}
-	}
-
 	/**
 	 * Plugin Updater
 	 *

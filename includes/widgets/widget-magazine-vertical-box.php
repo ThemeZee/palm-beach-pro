@@ -85,9 +85,6 @@ class Palm_Beach_Pro_Magazine_Vertical_Box_Widget extends WP_Widget {
 	/**
 	 * Renders the Widget Content
 	 *
-	 * Switches between vertical and vertical layout style based on widget settings
-	 *
-	 * @uses this->magazine_posts_vertical() or this->magazine_posts_vertical()
 	 * @used-by this->widget()
 	 *
 	 * @param array $settings / Settings for this widget instance.
@@ -119,13 +116,13 @@ class Palm_Beach_Pro_Magazine_Vertical_Box_Widget extends WP_Widget {
 				// Display first post differently.
 				if ( 0 === $posts_query->current_post ) :
 
-					get_template_part( 'template-parts/widgets/magazine-large-post', 'horizontal-box' );
+					get_template_part( 'template-parts/widgets/magazine-large-post', 'vertical-box' );
 
 					echo '<div class="small-posts clearfix">';
 
 				else :
 
-					get_template_part( 'template-parts/widgets/magazine-small-post', 'horizontal-box' );
+					get_template_part( 'template-parts/widgets/magazine-small-post', 'vertical-box' );
 
 				endif;
 
