@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Palm Beach Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-12-06 15:49+0100\n"
-"PO-Revision-Date: 2016-12-06 15:50+0100\n"
+"POT-Creation-Date: 2017-03-17 17:09+0100\n"
+"PO-Revision-Date: 2017-03-17 17:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: includes/admin/class-admin-notices.php:55
@@ -56,11 +56,11 @@ msgid "Security check failed"
 msgstr "Sicherheitscheck fehlgeschlagen"
 
 #: includes/admin/class-admin-notices.php:137
-#: includes/admin/class-plugin-updater.php:339
+#: includes/admin/class-plugin-updater.php:395
 msgid "Error"
 msgstr "Fehler"
 
-#: includes/admin/class-plugin-updater.php:189
+#: includes/admin/class-plugin-updater.php:201
 #, php-format
 msgid ""
 "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
@@ -68,7 +68,7 @@ msgstr ""
 "Es ist eine neue Version von %1$s verfügbar. %2$sDetails zu Version %3$s "
 "ansehen%4$s."
 
-#: includes/admin/class-plugin-updater.php:197
+#: includes/admin/class-plugin-updater.php:209
 #, php-format
 msgid ""
 "There is a new version of %1$s available. %2$sView version %3$s details%4$s "
@@ -77,7 +77,7 @@ msgstr ""
 "Es ist eine neue Version von %1$s verfügbar. %2$sDetails zu Version %3$s "
 "ansehen%4$s oder %5$sjetzt aktualisieren%6$s."
 
-#: includes/admin/class-plugin-updater.php:339
+#: includes/admin/class-plugin-updater.php:395
 msgid "You do not have permission to install plugin updates"
 msgstr "Du hast keine Berechtigung zur Installation von Plugin Updates"
 
@@ -310,17 +310,17 @@ msgstr "Footer Spalte 4"
 msgid "Appears on the fourth footer column."
 msgstr "Erscheint in der vierten Footer Spalte."
 
-#: includes/modules/class-header-bar.php:102
+#: includes/modules/class-header-bar.php:108
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-header-bar.php:103
+#: includes/modules/class-header-bar.php:109
 msgid "Header Social Icons"
 msgstr "Header Social Icons"
 
 #: includes/widgets/widget-magazine-columns.php:24
-msgid "Magazine: Columns"
-msgstr "Magazin: Spalten"
+msgid "Magazine (Columns)"
+msgstr "Magazin (Zwei Spalten)"
 
 #: includes/widgets/widget-magazine-columns.php:27
 msgid ""
@@ -330,47 +330,40 @@ msgstr ""
 "Zeigt die Beiträge von zwei gewählten Kategorien in zwei Spalten. Bitte "
 "verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
 
-#: includes/widgets/widget-magazine-columns.php:234
-#: includes/widgets/widget-magazine-horizontal-box.php:174
-#: includes/widgets/widget-magazine-vertical-box.php:190
-#, php-format
-msgid "View all posts from category %s"
-msgstr "Alle Beiträge in der Kategorie %s ansehen"
-
-#: includes/widgets/widget-magazine-columns.php:288
+#: includes/widgets/widget-magazine-columns.php:257
 msgid "Left Category Title:"
 msgstr "Titel der linken Kategorie:"
 
-#: includes/widgets/widget-magazine-columns.php:294
+#: includes/widgets/widget-magazine-columns.php:263
 msgid "Left Category:"
 msgstr "Linke Kategorie:"
 
-#: includes/widgets/widget-magazine-columns.php:297
-#: includes/widgets/widget-magazine-columns.php:318
-#: includes/widgets/widget-magazine-horizontal-box.php:234
-#: includes/widgets/widget-magazine-vertical-box.php:250
+#: includes/widgets/widget-magazine-columns.php:266
+#: includes/widgets/widget-magazine-columns.php:287
+#: includes/widgets/widget-magazine-horizontal-box.php:216
+#: includes/widgets/widget-magazine-vertical-box.php:211
 msgid "All Categories"
 msgstr "Alle Kategorien"
 
-#: includes/widgets/widget-magazine-columns.php:309
+#: includes/widgets/widget-magazine-columns.php:278
 msgid "Right Category Title:"
 msgstr "Titel der rechten Kategorie:"
 
-#: includes/widgets/widget-magazine-columns.php:315
+#: includes/widgets/widget-magazine-columns.php:284
 msgid "Right Category:"
 msgstr "Rechte Kategorie:"
 
-#: includes/widgets/widget-magazine-columns.php:330
+#: includes/widgets/widget-magazine-columns.php:299
 msgid "Number of posts:"
 msgstr "Anzahl der Beiträge:"
 
-#: includes/widgets/widget-magazine-columns.php:338
+#: includes/widgets/widget-magazine-columns.php:307
 msgid "Highlight first post (big image + excerpt)"
 msgstr "Ersten Beitrag hervorheben (großes Bild + Textauszug)"
 
 #: includes/widgets/widget-magazine-horizontal-box.php:24
-msgid "Magazine: Horizontal Box"
-msgstr "Magazin: Horizontale Box"
+msgid "Magazine (Horizontal Box)"
+msgstr "Magazin (Horizontale Box)"
 
 #: includes/widgets/widget-magazine-horizontal-box.php:27
 msgid ""
@@ -381,19 +374,19 @@ msgstr ""
 "Layout. Bitte verwende dieses Widget NUR in dem Magazin Startseite "
 "Widgetbereich."
 
-#: includes/widgets/widget-magazine-horizontal-box.php:225
-#: includes/widgets/widget-magazine-vertical-box.php:241
+#: includes/widgets/widget-magazine-horizontal-box.php:207
+#: includes/widgets/widget-magazine-vertical-box.php:202
 msgid "Title:"
 msgstr "Titel:"
 
-#: includes/widgets/widget-magazine-horizontal-box.php:231
-#: includes/widgets/widget-magazine-vertical-box.php:247
+#: includes/widgets/widget-magazine-horizontal-box.php:213
+#: includes/widgets/widget-magazine-vertical-box.php:208
 msgid "Category:"
 msgstr "Kategorie:"
 
 #: includes/widgets/widget-magazine-vertical-box.php:24
-msgid "Magazine: Vertical Box"
-msgstr "Magazin: Vertikale Box"
+msgid "Magazine (Vertical Box)"
+msgstr "Magazin (Vertikale Box)"
 
 #: includes/widgets/widget-magazine-vertical-box.php:27
 msgid ""
@@ -421,6 +414,10 @@ msgstr "Einstellungen"
 #~ msgstr "Navigation"
 
 #~ msgctxt "color setting"
+#~ msgid "Header Line"
+#~ msgstr "Header Linie"
+
+#~ msgctxt "color setting"
 #~ msgid "Content (primary)"
 #~ msgstr "Content Bereich (primär)"
 
@@ -429,26 +426,12 @@ msgstr "Einstellungen"
 #~ msgstr "Content Bereich (sekundär)"
 
 #~ msgctxt "color setting"
-#~ msgid "Main Sidebar Title"
-#~ msgstr "Titel der Basis Sidebar"
-
-#~ msgctxt "color setting"
-#~ msgid "Small Sidebar Title"
-#~ msgstr "Titel der kleinen Sidebar"
-
-#~ msgctxt "color setting"
 #~ msgid "Footer Line"
 #~ msgstr "Footerzeile"
 
 #~ msgctxt "font setting"
 #~ msgid "Widget Titles"
 #~ msgstr "Widget Titel"
-
-#~ msgid "Footer"
-#~ msgstr "Footer"
-
-#~ msgid "Appears on the footer area."
-#~ msgstr "Erscheint im Footerbereich."
 
 #~ msgid "Header Navigation"
 #~ msgstr "Header Navigation"
@@ -459,8 +442,8 @@ msgstr "Einstellungen"
 #~ msgid "Logo Spacing (default: 0)"
 #~ msgstr "Logo Abstand (Standard: 0)"
 
-#~ msgid "Header Spacing (default: 25)"
-#~ msgstr "Header Abstand (Standard: 25)"
+#~ msgid "Header Spacing (default: 20)"
+#~ msgstr "Header Abstand (Standard: 20)"
 
 #~ msgid "Header"
 #~ msgstr "Header"
@@ -470,30 +453,15 @@ msgstr "Einstellungen"
 #~ "Erscheint im Header Bereich. Du kannst hier Widgets für ein Suchfeld oder "
 #~ "Werbebanner verwenden."
 
-#~ msgid "Magazine Posts: Boxed (%s)"
-#~ msgstr "Magazin Beiträge: Box (%s)"
-
 #~ msgid ""
-#~ "Displays your posts from a selected category in a boxed layout. Please "
+#~ "Displays your posts from a selected category in a horizontal box. Please "
 #~ "use this widget ONLY in the Magazine Homepage widget area."
 #~ msgstr ""
-#~ "Zeigt die Beiträge einer gewählten Kategorie in einem Box Layout. Bitte "
-#~ "verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
+#~ "Zeigt die Beiträge einer gewählten Kategorie in einer horizontalen Box. "
+#~ "Bitte verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
 
-#~ msgid "Post Layout:"
-#~ msgstr "Beitrags-Layout:"
-
-#~ msgid "Horizontal Arrangement"
-#~ msgstr "Horizontale Anordnung"
-
-#~ msgid "Vertical Arrangement"
-#~ msgstr "Vertikale Anordnung"
-
-#~ msgid "Display post meta"
-#~ msgstr "Zeige Meta-Daten des Beitrags"
-
-#~ msgid "Magazine Posts: List (%s)"
-#~ msgstr "Magazin Beiträge: Liste (%s)"
+#~ msgid "Magazine (List)"
+#~ msgstr "Magazin (Liste)"
 
 #~ msgid ""
 #~ "Displays your posts from a selected category in a simple list layout. "
@@ -502,14 +470,8 @@ msgstr "Einstellungen"
 #~ "Zeigt die Beiträge einer gewählten Kategorie in einer Liste. Bitte "
 #~ "verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
 
-#~ msgid "Display post date"
-#~ msgstr "Zeige Datum des Beitrags"
-
-#~ msgid "Display post comments"
-#~ msgstr "Zeige Kommentare"
-
-#~ msgid "Magazine Posts: Single (%s)"
-#~ msgstr "Magazin Beiträge: Single (%s)"
+#~ msgid "Magazine (Single Post)"
+#~ msgstr "Magazin (Einzelner Beitrag)"
 
 #~ msgid ""
 #~ "Displays a single post from a selected category. Please use this widget "
@@ -517,6 +479,13 @@ msgstr "Einstellungen"
 #~ msgstr ""
 #~ "Zeigt einen einzelnen Beitrag einer gewählten Kategorie. Bitte verwende "
 #~ "dieses Widget NUR in dem Magazin Startseite Widgetbereich."
+
+#~ msgid ""
+#~ "Displays your posts from a selected category in a vertical box. Please "
+#~ "use this widget ONLY in the Magazine Homepage widget area."
+#~ msgstr ""
+#~ "Zeigt die Beiträge einer gewählten Kategorie in einer vertikalen Box. "
+#~ "Bitte verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
 
 #~ msgid "Footer Left"
 #~ msgstr "Footer Links"
@@ -596,33 +565,6 @@ msgstr "Einstellungen"
 #~ msgid "Footer Navigation"
 #~ msgstr "Footer Navigation"
 
-#~ msgid "Header Spacing (default: 20)"
-#~ msgstr "Header Abstand (Standard: 20)"
-
-#~ msgid "Post Meta"
-#~ msgstr "Beitrags-Metadaten"
-
-#~ msgid "Display post author"
-#~ msgstr "Zeige Autor des Beitrags"
-
-#~ msgid "Display post categories"
-#~ msgstr "Zeige Kategorien des Beitrags"
-
-#~ msgid "Single Posts"
-#~ msgstr "Einzelne Beiträge"
-
-#~ msgid "Display featured image on single posts"
-#~ msgstr "Zeige Beitragsbilder in einzelnen Beiträgen"
-
-#~ msgid "Display post tags on single posts"
-#~ msgstr "Zeige Schlagwörter in einzelnen Beiträgen"
-
-#~ msgid "Display post navigation on single posts"
-#~ msgstr "Zeige Beitrags-Navigation"
-
-#~ msgid "Display post category"
-#~ msgstr "Zeige Kategorie des Beitrags"
-
 #~ msgctxt "color setting"
 #~ msgid "Links"
 #~ msgstr "Links"
@@ -654,7 +596,10 @@ msgstr "Einstellungen"
 #~ msgid "Remove spacing on header area for fullwidth logo images."
 #~ msgstr "Entferne Abstände im Header für Fullwidth Logo Bilder."
 
-#~ msgid "Appears on footer area."
+#~ msgid "Footer"
+#~ msgstr "Footer"
+
+#~ msgid "Appears on the footer area."
 #~ msgstr "Erscheint im Footerbereich."
 
 #~ msgid "Logo Spacing (default: 10)"
@@ -662,12 +607,6 @@ msgstr "Einstellungen"
 
 #~ msgid "Navigation Spacing (default: 10)"
 #~ msgstr "Navigationsmenü Abstand (Standard: 10)"
-
-#~ msgid "Read more"
-#~ msgstr "Weiterlesen"
-
-#~ msgid "Magazine Posts: 2 Columns (%s)"
-#~ msgstr "Magazin Beiträge: 2 Spalten (%s)"
 
 #~ msgctxt "color setting"
 #~ msgid "Footer Border"
@@ -686,21 +625,34 @@ msgstr "Einstellungen"
 #~ msgid "Header Spacing (default: 30)"
 #~ msgstr "Header Abstand (Standard: 30)"
 
-#~ msgid "Magazine Posts: Sidebar (%s)"
-#~ msgstr "Magazin Beiträge: Sidebar (%s)"
+#~ msgid "Magazine (Sidebar)"
+#~ msgstr "Magazin (Sidebar)"
 
 #~ msgid ""
 #~ "Displays your posts from a selected category. You can use this widget in "
-#~ "the Sidebar widget area."
+#~ "the Main Sidebar widget area."
 #~ msgstr ""
 #~ "Zeigt die Beiträge einer gewählten Kategorie. Bitte verwende dieses "
-#~ "Widget in der Sidebar."
+#~ "Widget in der Sidebar. "
 
 #~ msgid "Display post excerpt"
 #~ msgstr "Zeige Auszug des Beitrags"
 
 #~ msgid "Logo Spacing (default: 15)"
 #~ msgstr "Logo Abstand (Standard: 15)"
+
+#~ msgid "Stay in Touch"
+#~ msgstr "Bleibe in Kontakt"
+
+#~ msgctxt "font setting"
+#~ msgid "Navigation and Widgets"
+#~ msgstr "Navigation und Widgets"
+
+#~ msgid "Header Bottom"
+#~ msgstr "Header Unten"
+
+#~ msgid "Highlight first post"
+#~ msgstr "Ersten Beitrag hervorheben"
 
 #~ msgctxt "color setting"
 #~ msgid "Post Titles (primary)"
@@ -720,9 +672,6 @@ msgstr "Einstellungen"
 
 #~ msgid "Header Spacing (default: 10)"
 #~ msgstr "Header Abstand (Standard: 10)"
-
-#~ msgid "Stay in Touch"
-#~ msgstr "Bleibe in Kontakt"
 
 #~ msgid "Social Icons Text"
 #~ msgstr "Social Icons Text"
@@ -880,8 +829,29 @@ msgstr "Einstellungen"
 #~ msgid "Excerpt Length"
 #~ msgstr "Länge des Beitragsauszugs"
 
+#~ msgid "Post Meta"
+#~ msgstr "Beitrags-Metadaten"
+
+#~ msgid "Display post date"
+#~ msgstr "Zeige Datum des Beitrags"
+
+#~ msgid "Display post comments"
+#~ msgstr "Zeige Kommentare"
+
+#~ msgid "Single Posts"
+#~ msgstr "Einzelne Beiträge"
+
+#~ msgid "Display featured image on single posts"
+#~ msgstr "Zeige Beitragsbilder in einzelnen Beiträgen"
+
 #~ msgid "Display post author on single posts"
 #~ msgstr "Zeige Autor in einzelnen Beiträgen"
+
+#~ msgid "Display post tags on single posts"
+#~ msgstr "Zeige Schlagwörter in einzelnen Beiträgen"
+
+#~ msgid "Display post navigation on single posts"
+#~ msgstr "Zeige Beitrags-Navigation"
 
 #~ msgid "Post Slider"
 #~ msgstr "Beitrags-Slider"
@@ -935,12 +905,12 @@ msgstr "Einstellungen"
 #~ msgstr "Nächster Beitrag:"
 
 #~ msgctxt "pagination"
-#~ msgid "Next Posts"
-#~ msgstr "Nächste Beiträge"
-
-#~ msgctxt "pagination"
 #~ msgid "Previous Posts"
 #~ msgstr "Vorherige Beiträge"
+
+#~ msgctxt "pagination"
+#~ msgid "Next Posts"
+#~ msgstr "Nächste Beiträge"
 
 #~ msgid "Powered by %1$s and %2$s."
 #~ msgstr "Erstellt mit %1$s und %2$s."
@@ -992,6 +962,15 @@ msgstr "Einstellungen"
 #~ msgid "rate it"
 #~ msgstr "bewerte es"
 
+#~ msgid "Magazine Posts: 2 Columns (%s)"
+#~ msgstr "Magazin Beiträge: 2 Spalten (%s)"
+
+#~ msgid "View all posts from category %s"
+#~ msgstr "Alle Beiträge in der Kategorie %s ansehen"
+
+#~ msgid "Display post meta"
+#~ msgstr "Zeige Meta-Daten des Beitrags"
+
 #~ msgid "Magazine Posts: Grid (%s)"
 #~ msgstr "Magazin Beiträge: Raster (%s)"
 
@@ -1011,12 +990,8 @@ msgstr "Einstellungen"
 #~ msgid "Three Columns Grid"
 #~ msgstr "Dreispaltiges Raster"
 
-#~ msgid ""
-#~ "Displays your posts from a selected category. You can use this widget in "
-#~ "the Main Sidebar widget area."
-#~ msgstr ""
-#~ "Zeigt die Beiträge einer gewählten Kategorie. Bitte verwende dieses "
-#~ "Widget in der Sidebar. "
+#~ msgid "Magazine Posts: Sidebar (%s)"
+#~ msgstr "Magazin Beiträge: Sidebar (%s)"
 
 #~ msgid "Search Results for: %s"
 #~ msgstr "Suchergebnisse für: %s"
@@ -1097,9 +1072,6 @@ msgstr "Einstellungen"
 #~ "Erscheint nur auf dem Magazin Startseite Template. Du kannst hier die "
 #~ "Kategorie Beiträge Widgets verwenden."
 
-#~ msgid "Display Tagline below site title."
-#~ msgstr "Zeige Untertitel unter dem Seitentitel."
-
 #~ msgid "Header Image Link"
 #~ msgstr "Header-Bild Link"
 
@@ -1112,8 +1084,8 @@ msgstr "Einstellungen"
 #~ msgid "https://themezee.com/docs/anderson-documentation/"
 #~ msgstr "https://themezee.com/de/docs/anderson-dokumentation/"
 
-#~ msgid "https://wordpress.org/support/theme/anderson/reviews/?filter=5"
-#~ msgstr "https://wordpress.org/support/theme/anderson/reviews/?filter=5"
+#~ msgid "https://wordpress.org/support/theme/anderson-lite/reviews/?filter=5"
+#~ msgstr "https://wordpress.org/support/theme/anderson-lite/reviews/?filter=5"
 
 #~ msgid "Menu"
 #~ msgstr "Menü"
@@ -1183,6 +1155,9 @@ msgstr "Einstellungen"
 #~ msgid "Display [...] after excerpts"
 #~ msgstr "Zeige [...] nach Beitragsauszügen"
 
+#~ msgid "Display post author"
+#~ msgstr "Zeige Autor des Beitrags"
+
 #~ msgid "Display post tags"
 #~ msgstr "Zeige Schlagwörter des Beitrags"
 
@@ -1242,6 +1217,13 @@ msgstr "Einstellungen"
 
 #~ msgid "Review Anderson"
 #~ msgstr "Anderson bewerten"
+
+#~ msgid ""
+#~ "Displays your posts from a selected category in a boxed layout. Please "
+#~ "use this widget ONLY in the Magazine Homepage widget area."
+#~ msgstr ""
+#~ "Zeigt die Beiträge einer gewählten Kategorie in einem Box Layout. Bitte "
+#~ "verwende dieses Widget NUR in dem Magazin Startseite Widgetbereich."
 
 #~ msgid "Category Posts: Boxed (%s)"
 #~ msgstr "Kategorie Beiträge: Box (%s)"
@@ -1330,6 +1312,9 @@ msgstr "Einstellungen"
 #~ msgid "Post Length (archive pages)"
 #~ msgstr "Beitragslänge (Archivseiten)"
 
+#~ msgid "Read more"
+#~ msgstr "Weiterlesen"
+
 #~ msgid "Review Beetle"
 #~ msgstr "Beetle bewerten"
 
@@ -1359,6 +1344,9 @@ msgstr "Einstellungen"
 
 #~ msgid "Display search field on header area"
 #~ msgstr "Suchfeld im Header Bereich anzeigen"
+
+#~ msgid "Display post categories"
+#~ msgstr "Zeige Kategorien des Beitrags"
 
 #~ msgid "Edit Post"
 #~ msgstr "Beitrag bearbeiten"
@@ -1514,6 +1502,15 @@ msgstr "Einstellungen"
 
 #~ msgid "Review Glades"
 #~ msgstr "Glades bewerten"
+
+#~ msgid "Post Layout:"
+#~ msgstr "Beitrags-Layout:"
+
+#~ msgid "Horizontal Arrangement"
+#~ msgstr "Horizontale Anordnung"
+
+#~ msgid "Vertical Arrangement"
+#~ msgstr "Vertikale Anordnung"
 
 #~ msgid "Appears on single posts and pages."
 #~ msgstr "Erscheint auf einzelnen Beiträgen und Seiten."
@@ -1726,9 +1723,12 @@ msgstr "Einstellungen"
 #~ msgid "Review Napoli"
 #~ msgstr "Napoli bewerten"
 
+#~ msgid "Magazine: Grid"
+#~ msgstr "Magazin: Grid"
+
 #~ msgid ""
 #~ "Appears on blog index and Magazine Homepage template. You can use the "
-#~ "Magazine Posts widgets here."
+#~ "Magazine widgets here."
 #~ msgstr ""
 #~ "Erscheint auf dem Blog Index und Magazin Startseite Template. Du kannst "
 #~ "hier die Magazin Widgets verwenden."
@@ -1754,6 +1754,9 @@ msgstr "Einstellungen"
 #~ msgid "Show Slider on blog index"
 #~ msgstr "Zeige Slider im Blog Index"
 
+#~ msgid "Search"
+#~ msgstr "Suche"
+
 #~ msgid "Tags"
 #~ msgstr "Schlagwörter"
 
@@ -1768,6 +1771,13 @@ msgstr "Einstellungen"
 
 #~ msgid "Appears on the slide-in navigation menu."
 #~ msgstr "Erscheint im Sidebar Navigationsmenü."
+
+#~ msgid ""
+#~ "Appears on blog index and Magazine Homepage template. You can use the "
+#~ "Magazine Posts widgets here."
+#~ msgstr ""
+#~ "Erscheint auf dem Blog Index und Magazin Startseite Template. Du kannst "
+#~ "hier die Magazin Widgets verwenden."
 
 #~ msgid "https://themezee.com/themes/pocono/"
 #~ msgstr "https://themezee.com/de/themes/pocono/"
@@ -1820,6 +1830,9 @@ msgstr "Einstellungen"
 #~ msgid "Review Poseidon"
 #~ msgstr "Poseidon bewerten"
 
+#~ msgid "Magazine Posts: Boxed (%s)"
+#~ msgstr "Magazin Beiträge: Box (%s)"
+
 #~ msgid "https://themezee.com/themes/rubine/"
 #~ msgstr "https://themezee.com/de/themes/rubine/"
 
@@ -1869,9 +1882,6 @@ msgstr "Einstellungen"
 
 #~ msgid "Review Rubine"
 #~ msgstr "Rubine bewerten"
-
-#~ msgid "Display Tagline beside site title."
-#~ msgstr "Zeige Untertitel neben dem Seitentitel."
 
 #~ msgid "https://themezee.com/themes/smartline/"
 #~ msgstr "https://themezee.com/de/themes/smartline/"
@@ -1933,6 +1943,54 @@ msgstr "Einstellungen"
 
 #~ msgid "Review zeeDynamic"
 #~ msgstr "zeeDynamic bewerten"
+
+#~ msgctxt "color setting"
+#~ msgid "Main Sidebar Title"
+#~ msgstr "Titel der Basis Sidebar"
+
+#~ msgctxt "color setting"
+#~ msgid "Small Sidebar Title"
+#~ msgstr "Titel der kleinen Sidebar"
+
+#~ msgid "Header Spacing (default: 25)"
+#~ msgstr "Header Abstand (Standard: 25)"
+
+#~ msgid "Magazine Posts: List (%s)"
+#~ msgstr "Magazin Beiträge: Liste (%s)"
+
+#~ msgid "Magazine Posts: Single (%s)"
+#~ msgstr "Magazin Beiträge: Single (%s)"
+
+#~ msgid "Display post category"
+#~ msgstr "Zeige Kategorie des Beitrags"
+
+#~ msgid "Appears on footer area."
+#~ msgstr "Erscheint im Footerbereich."
+
+#~ msgid ""
+#~ "Displays your posts from a selected category. You can use this widget in "
+#~ "the Sidebar widget area."
+#~ msgstr ""
+#~ "Zeigt die Beiträge einer gewählten Kategorie. Bitte verwende dieses "
+#~ "Widget in der Sidebar."
+
+#~ msgid "Magazine: Columns"
+#~ msgstr "Magazin: Spalten"
+
+#~ msgid "Magazine: Horizontal Box"
+#~ msgstr "Magazin: Horizontale Box"
+
+#~ msgid "Magazine: Vertical Box"
+#~ msgstr "Magazin: Vertikale Box"
+
+#~ msgid "Display Tagline below site title."
+#~ msgstr "Zeige Untertitel unter dem Seitentitel."
+
+#~ msgid "https://wordpress.org/support/theme/anderson/reviews/?filter=5"
+#~ msgstr "https://wordpress.org/support/theme/anderson/reviews/?filter=5"
+
+#~ msgid "Display Tagline beside site title."
+#~ msgstr "Zeige Untertitel neben dem Seitentitel."
 
 #~ msgid "Main Sidebar Title"
 #~ msgstr "Titel der Basis Sidebar"
