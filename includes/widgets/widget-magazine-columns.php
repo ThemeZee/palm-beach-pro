@@ -274,7 +274,7 @@ class Palm_Beach_Pro_Magazine_Columns_Widget extends WP_Widget {
 			?>
 		</p>
 
-				<p>
+		<p>
 			<label for="<?php echo $this->get_field_id( 'category_two_title' ); ?>"><?php esc_html_e( 'Right Category Title:', 'palm-beach-pro' ); ?>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'category_two_title' ); ?>" name="<?php echo $this->get_field_name( 'category_two_title' ); ?>" type="text" value="<?php echo esc_attr( $settings['category_two_title'] ); ?>" />
 			</label>
