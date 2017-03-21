@@ -118,7 +118,7 @@ class Palm_Beach_Pro_Magazine_Columns_Widget extends WP_Widget {
 					$this->category_title( $args, $settings, $settings['category_one'], $settings['category_one_title'] ); ?>
 
 				<div class="magazine-column-post-list clearfix">
-					<?php $this->magazine_posts( $settings, $post_ids_category_one ); ?>
+					<?php $this->magazine_posts( $settings, $post_ids_category_one, $settings['number'] ); ?>
 				</div>
 
 			</div>
@@ -133,7 +133,7 @@ class Palm_Beach_Pro_Magazine_Columns_Widget extends WP_Widget {
 					$this->category_title( $args, $settings, $settings['category_two'], $settings['category_two_title'] ); ?>
 
 				<div class="magazine-column-post-list clearfix">
-					<?php $this->magazine_posts( $settings, $post_ids_category_two ); ?>
+					<?php $this->magazine_posts( $settings, $post_ids_category_two, $settings['number'] ); ?>
 				</div>
 
 			</div>
@@ -151,12 +151,13 @@ class Palm_Beach_Pro_Magazine_Columns_Widget extends WP_Widget {
 	 * @param array $settings / Settings for this widget instance.
 	 * @param array $post_ids / Array with post ids.
 	 */
-	function magazine_posts( $settings, $post_ids ) {
+	function magazine_posts( $settings, $post_ids, $number_of_posts ) {
 
 		// Fetch posts from database.
 		$query_arguments = array(
-			'post__in'            => $post_ids,
-			'no_found_rows'       => true,
+			'post__in'       => $post_ids,
+			'posts_per_page' => absint( $number_of_posts ),
+			'no_found_rows'  => true,
 		);
 		$posts_query = new WP_Query( $query_arguments );
 
