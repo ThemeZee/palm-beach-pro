@@ -61,6 +61,7 @@ class Palm_Beach_Pro_Customizer {
 		$default_options = array(
 			'logo_spacing'         => 10,
 			'navi_spacing'         => 10,
+			'scroll_to_top'        => false,
 			'footer_text'          => '',
 			'credit_link'          => true,
 			'top_navi_color'       => '#242424',

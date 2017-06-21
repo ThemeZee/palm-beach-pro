@@ -167,7 +167,7 @@ class Palm_Beach_Pro_Footer_Line {
 			'section'  => 'palm_beach_pro_section_footer',
 			'settings' => 'palm_beach_theme_options[footer_text]',
 			'type'     => 'textarea',
-			'priority' => 10,
+			'priority' => 30,
 			)
 		);
 
@@ -184,7 +184,7 @@ class Palm_Beach_Pro_Footer_Line {
 			'section'  => 'palm_beach_pro_section_footer',
 			'settings' => 'palm_beach_theme_options[credit_link]',
 			'type'     => 'checkbox',
-			'priority' => 20,
+			'priority' => 40,
 			)
 		);
 

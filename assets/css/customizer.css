@@ -6,8 +6,13 @@
  * @package Palm Beach Pro
  */
 
-#customize-control-palm_beach_theme_options-header_spacing {
+#customize-control-palm_beach_theme_options-header_spacing,
+#customize-control-palm_beach_theme_options-footer_text {
 	margin-top: 16px;
+}
+
+#customize-control-palm_beach_theme_options-scroll_top_title {
+	margin-bottom: 0;
 }
 
 #customize-control-palm_beach_theme_options-footer_text textarea {
