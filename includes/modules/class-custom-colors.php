@@ -140,7 +140,8 @@ class Palm_Beach_Pro_Custom_Colors {
 				.tzwb-tabbed-content .tzwb-tabnavi li a:active,
 				.tzwb-tabbed-content .tzwb-tabnavi li a.current-tab,
 				.tzwb-social-icons .social-icons-menu li a:link,
-				.tzwb-social-icons .social-icons-menu li a:visited {
+				.tzwb-social-icons .social-icons-menu li a:visited,
+				.scroll-to-top-button:hover {
 					border-color: ' . $theme_options['link_color'] . ';
 					background: ' . $theme_options['link_color'] . ';
 				}
