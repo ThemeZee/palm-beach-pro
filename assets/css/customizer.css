@@ -48,3 +48,16 @@
 .customize-control-palm_beach_pro_custom_font .actions .button:hover {
 	cursor: pointer;
 }
+
+/* Magazine Sections */
+.adding-magazine-widget #available-widgets [id*='widget-tpl-palm-beach-magazine-columns'] .widget-top::before {
+	background-image: url( '../images/magazine-columns.png' );
+}
+
+.adding-magazine-widget #available-widgets [id*='widget-tpl-palm-beach-magazine-horizontal-box'] .widget-top::before {
+	background-image: url( '../images/magazine-horizontal-box.png' );
+}
+
+.adding-magazine-widget #available-widgets [id*='widget-tpl-palm-beach-magazine-vertical-box'] .widget-top::before {
+	background-image: url( '../images/magazine-vertical-box.png' );
+}
