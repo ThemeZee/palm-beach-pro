@@ -24,7 +24,7 @@ class Palm_Beach_Pro_Magazine_Columns_Widget extends WP_Widget {
 			esc_html__( 'Magazine (Columns)', 'palm-beach-pro' ), // Name.
 			array(
 				'classname' => 'palm-beach-magazine-columns-widget',
-				'description' => esc_html__( 'Displays your posts from two selected categories. Please use this widget ONLY in the Magazine Homepage widget area.', 'palm-beach-pro' ),
+				'description' => esc_html__( 'Displays your posts from two selected categories.', 'palm-beach-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -36,12 +36,12 @@ class Palm_Beach_Pro_Magazine_Columns_Widget extends WP_Widget {
 	private function default_settings() {
 
 		$defaults = array(
-			'category_one'			=> 0,
-			'category_two'			=> 0,
-			'category_one_title'	=> '',
-			'category_two_title'	=> '',
-			'number'				=> 4,
-			'highlight_post'		=> true,
+			'category_one'       => 0,
+			'category_two'       => 0,
+			'category_one_title' => esc_html__( 'Left Category', 'palm-beach-pro' ),
+			'category_two_title' => esc_html__( 'Right Category', 'palm-beach-pro' ),
+			'number'             => 4,
+			'highlight_post'     => true,
 		);
 
 		return $defaults;
