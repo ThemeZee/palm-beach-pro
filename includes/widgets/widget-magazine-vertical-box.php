@@ -24,7 +24,7 @@ class Palm_Beach_Pro_Magazine_Vertical_Box_Widget extends WP_Widget {
 			esc_html__( 'Magazine (Vertical Box)', 'palm-beach-pro' ), // Name.
 			array(
 				'classname' => 'palm-beach-magazine-vertical-box-widget',
-				'description' => esc_html__( 'Displays your posts from a selected category in a vertical box layout.', 'palm-beach-pro' ),
+				'description' => esc_html__( 'Displays your posts from a selected category in a vertical box.', 'palm-beach-pro' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
