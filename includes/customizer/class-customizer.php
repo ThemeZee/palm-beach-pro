@@ -73,7 +73,6 @@ class Palm_Beach_Pro_Customizer {
 			'text_font'            => 'Hind',
 			'title_font'           => 'Montserrat',
 			'navi_font'            => 'Hind',
-			'available_fonts'      => 'favorites',
 		);
 
 		return $default_options;
