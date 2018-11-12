@@ -8,7 +8,9 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Custom Colors Class
@@ -30,9 +32,11 @@ class Palm_Beach_Pro_Custom_Colors {
 		// Add Custom Color CSS code to custom stylesheet output.
 		add_filter( 'palm_beach_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) );
 
+		// Add Custom Color CSS code to the Gutenberg editor.
+		add_action( 'enqueue_block_editor_assets', array( __CLASS__, 'custom_editor_colors_css' ) );
+
 		// Add Custom Color Settings.
 		add_action( 'customize_register', array( __CLASS__, 'color_settings' ) );
-
 	}
 
 	/**
@@ -74,7 +78,7 @@ class Palm_Beach_Pro_Custom_Colors {
 				.entry-title a:active {
 					color: #57b7d7;
 				}
-				';
+			';
 		}
 
 		// Set Primary Content Color.
@@ -97,7 +101,8 @@ class Palm_Beach_Pro_Custom_Colors {
 				.entry-title a:active,
 				.footer-navigation-menu a:hover,
 				.footer-navigation-menu a:active,
-				.footer-social-icons .social-icons-menu li a:hover:before {
+				.footer-social-icons .social-icons-menu li a:hover:before,
+				.has-primary-color {
 					color: ' . $theme_options['link_color'] . ';
 				}
 
@@ -150,7 +155,11 @@ class Palm_Beach_Pro_Custom_Colors {
 				.tzwb-social-icons .social-icons-menu li a:active {
 					background: #242424;
 				}
-				';
+
+				.has-primary-background-color {
+					background-color: ' . $theme_options['link_color'] . ';
+				}
+			';
 		}
 
 		// Set Top Navigation Color.
@@ -161,7 +170,7 @@ class Palm_Beach_Pro_Custom_Colors {
 				.top-navigation-menu ul {
 					background: ' . $theme_options['top_navi_color'] . ';
 				}
-				';
+			';
 
 			// Check if a light background color was chosen.
 			if ( self::is_color_light( $theme_options['top_navi_color'] ) ) {
@@ -186,7 +195,7 @@ class Palm_Beach_Pro_Custom_Colors {
 					.header-bar .social-icons-menu li a:active {
 						color: rgba(0,0,0,0.4);
 					}
-					';
+				';
 			}
 		}
 
@@ -213,7 +222,7 @@ class Palm_Beach_Pro_Custom_Colors {
 						border-top: 1px solid rgba(0,0,0,0.1);
 					}
 				}
-				';
+			';
 
 			// Check if a dark background color was chosen.
 			if ( self::is_color_dark( $theme_options['header_color'] ) ) {
@@ -244,7 +253,7 @@ class Palm_Beach_Pro_Custom_Colors {
 							border-top: 1px solid rgba(255,255,255,0.1);
 						}
 					}
-					';
+				';
 			}
 		}
 
@@ -255,7 +264,7 @@ class Palm_Beach_Pro_Custom_Colors {
 				.footer-widgets-background {
 					background: ' . $theme_options['footer_widgets_color'] . ';
 				}
-				';
+			';
 
 			// Check if a light background color was chosen.
 			if ( self::is_color_light( $theme_options['footer_widgets_color'] ) ) {
@@ -275,7 +284,7 @@ class Palm_Beach_Pro_Custom_Colors {
 					.footer-widgets .widget a:active  {
 						color: rgba(0,0,0,0.5);
 					}
-					';
+				';
 			}
 		}
 
@@ -301,7 +310,7 @@ class Palm_Beach_Pro_Custom_Colors {
 				.footer-navigation-menu a:active {
 					color: rgba(0,0,0,0.75);
 				}
-				';
+			';
 
 			// Check if a dark background color was chosen.
 			if ( self::is_color_dark( $theme_options['footer_color'] ) ) {
@@ -323,12 +332,61 @@ class Palm_Beach_Pro_Custom_Colors {
 					.footer-navigation-menu a:active {
 						color: rgba(255,255,255,0.75);
 					}
-					';
+				';
 			}
 		}
 
 		return $custom_css;
+	}
 
+	/**
+	 * Adds Color CSS styles in the Gutenberg Editor to override default colors
+	 *
+	 * @return void
+	 */
+	static function custom_editor_colors_css() {
+
+		// Get Theme Options from Database.
+		$theme_options = Palm_Beach_Pro_Customizer::get_theme_options();
+
+		// Get Default Fonts from settings.
+		$default_options = Palm_Beach_Pro_Customizer::get_default_options();
+
+		// Set Primary Color.
+		if ( $theme_options['link_color'] !== $default_options['link_color'] ) {
+
+			$custom_css = '
+				.has-primary-color,
+				.edit-post-visual-editor .editor-block-list__block a {
+					color: ' . $theme_options['link_color'] . ';
+				}
+				.has-primary-background-color {
+					background-color: ' . $theme_options['link_color'] . ';
+				}
+			';
+
+			wp_add_inline_style( 'palm-beach-editor-styles', $custom_css );
+		}
+	}
+
+	/**
+	 * Change primary color in Gutenberg Editor.
+	 *
+	 * @return array $editor_settings
+	 */
+	static function change_primary_color( $color ) {
+		// Get Theme Options from Database.
+		$theme_options = Palm_Beach_Pro_Customizer::get_theme_options();
+
+		// Get Default Fonts from settings.
+		$default_options = Palm_Beach_Pro_Customizer::get_default_options();
+
+		// Set Primary Color.
+		if ( $theme_options['link_color'] !== $default_options['link_color'] ) {
+			$color = $theme_options['link_color'];
+		}
+
+		return $color;
 	}
 
 	/**
@@ -342,9 +400,8 @@ class Palm_Beach_Pro_Custom_Colors {
 		$wp_customize->add_section( 'palm_beach_pro_section_colors', array(
 			'title'    => __( 'Theme Colors', 'palm-beach-pro' ),
 			'priority' => 60,
-			'panel' => 'palm_beach_options_panel',
-			)
-		);
+			'panel'    => 'palm_beach_options_panel',
+		) );
 
 		// Get Default Colors from settings.
 		$default_options = Palm_Beach_Pro_Customizer::get_default_options();
@@ -352,16 +409,15 @@ class Palm_Beach_Pro_Custom_Colors {
 		// Add Top Navigation Color setting.
 		$wp_customize->add_setting( 'palm_beach_theme_options[top_navi_color]', array(
 			'default'           => $default_options['top_navi_color'],
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'palm_beach_theme_options[top_navi_color]', array(
-				'label'      => _x( 'Top Navigation', 'color setting', 'palm-beach-pro' ),
-				'section'    => 'palm_beach_pro_section_colors',
-				'settings'   => 'palm_beach_theme_options[top_navi_color]',
+				'label'    => _x( 'Top Navigation', 'color setting', 'palm-beach-pro' ),
+				'section'  => 'palm_beach_pro_section_colors',
+				'settings' => 'palm_beach_theme_options[top_navi_color]',
 				'priority' => 10,
 			)
 		) );
@@ -369,16 +425,15 @@ class Palm_Beach_Pro_Custom_Colors {
 		// Add Navigation Primary Color setting.
 		$wp_customize->add_setting( 'palm_beach_theme_options[header_color]', array(
 			'default'           => $default_options['header_color'],
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'palm_beach_theme_options[header_color]', array(
-				'label'      => _x( 'Header', 'color setting', 'palm-beach-pro' ),
-				'section'    => 'palm_beach_pro_section_colors',
-				'settings'   => 'palm_beach_theme_options[header_color]',
+				'label'    => _x( 'Header', 'color setting', 'palm-beach-pro' ),
+				'section'  => 'palm_beach_pro_section_colors',
+				'settings' => 'palm_beach_theme_options[header_color]',
 				'priority' => 20,
 			)
 		) );
@@ -386,16 +441,15 @@ class Palm_Beach_Pro_Custom_Colors {
 		// Add Content Primary Color setting.
 		$wp_customize->add_setting( 'palm_beach_theme_options[link_color]', array(
 			'default'           => $default_options['link_color'],
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'palm_beach_theme_options[link_color]', array(
-				'label'      => _x( 'Links and Buttons', 'color setting', 'palm-beach-pro' ),
-				'section'    => 'palm_beach_pro_section_colors',
-				'settings'   => 'palm_beach_theme_options[link_color]',
+				'label'    => _x( 'Links and Buttons', 'color setting', 'palm-beach-pro' ),
+				'section'  => 'palm_beach_pro_section_colors',
+				'settings' => 'palm_beach_theme_options[link_color]',
 				'priority' => 30,
 			)
 		) );
@@ -403,16 +457,15 @@ class Palm_Beach_Pro_Custom_Colors {
 		// Add Content Secondary Color setting.
 		$wp_customize->add_setting( 'palm_beach_theme_options[title_color]', array(
 			'default'           => $default_options['title_color'],
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'refresh',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'palm_beach_theme_options[title_color]', array(
-				'label'      => _x( 'Headings', 'color setting', 'palm-beach-pro' ),
-				'section'    => 'palm_beach_pro_section_colors',
-				'settings'   => 'palm_beach_theme_options[title_color]',
+				'label'    => _x( 'Headings', 'color setting', 'palm-beach-pro' ),
+				'section'  => 'palm_beach_pro_section_colors',
+				'settings' => 'palm_beach_theme_options[title_color]',
 				'priority' => 40,
 			)
 		) );
@@ -420,16 +473,15 @@ class Palm_Beach_Pro_Custom_Colors {
 		// Add Footer Color setting.
 		$wp_customize->add_setting( 'palm_beach_theme_options[footer_widgets_color]', array(
 			'default'           => $default_options['footer_widgets_color'],
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'palm_beach_theme_options[footer_widgets_color]', array(
-				'label'      => _x( 'Footer Widgets', 'color setting', 'palm-beach-pro' ),
-				'section'    => 'palm_beach_pro_section_colors',
-				'settings'   => 'palm_beach_theme_options[footer_widgets_color]',
+				'label'    => _x( 'Footer Widgets', 'color setting', 'palm-beach-pro' ),
+				'section'  => 'palm_beach_pro_section_colors',
+				'settings' => 'palm_beach_theme_options[footer_widgets_color]',
 				'priority' => 50,
 			)
 		) );
@@ -437,20 +489,18 @@ class Palm_Beach_Pro_Custom_Colors {
 		// Add Footer Color setting.
 		$wp_customize->add_setting( 'palm_beach_theme_options[footer_color]', array(
 			'default'           => $default_options['footer_color'],
-			'type'           	=> 'option',
+			'type'              => 'option',
 			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
-			)
-		);
+		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
 			$wp_customize, 'palm_beach_theme_options[footer_color]', array(
-				'label'      => _x( 'Footer', 'color setting', 'palm-beach-pro' ),
-				'section'    => 'palm_beach_pro_section_colors',
-				'settings'   => 'palm_beach_theme_options[footer_color]',
+				'label'    => _x( 'Footer', 'color setting', 'palm-beach-pro' ),
+				'section'  => 'palm_beach_pro_section_colors',
+				'settings' => 'palm_beach_theme_options[footer_color]',
 				'priority' => 60,
 			)
 		) );
-
 	}
 
 	/**
@@ -492,3 +542,4 @@ class Palm_Beach_Pro_Custom_Colors {
 
 // Run Class.
 add_action( 'init', array( 'Palm_Beach_Pro_Custom_Colors', 'setup' ) );
+add_filter( 'palm_beach_primary_color', array( 'Palm_Beach_Pro_Custom_Colors', 'change_primary_color' ) );

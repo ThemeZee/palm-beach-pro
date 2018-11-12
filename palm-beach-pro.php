@@ -5,11 +5,11 @@ Plugin URI: http://themezee.com/addons/palm-beach-pro/
 Description: Adds additional features like custom colors, google fonts, widget areas and footer copyright to the Palm Beach theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 1.4
+Version: 1.5
 Text Domain: palm-beach-pro
 Domain Path: /languages/
-License: GPL v3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Palm Beach Pro
 Copyright(C) 2016, ThemeZee.com - support@themezee.com
@@ -17,7 +17,9 @@ Copyright(C) 2016, ThemeZee.com - support@themezee.com
 */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 
 /**
@@ -48,7 +50,6 @@ class Palm_Beach_Pro {
 
 		// Setup Action Hooks.
 		self::setup_actions();
-
 	}
 
 	/**
@@ -62,7 +63,7 @@ class Palm_Beach_Pro {
 		define( 'PALM_BEACH_PRO_NAME', 'Palm Beach Pro' );
 
 		// Define Version Number.
-		define( 'PALM_BEACH_PRO_VERSION', '1.4' );
+		define( 'PALM_BEACH_PRO_VERSION', '1.5' );
 
 		// Define Plugin Name.
 		define( 'PALM_BEACH_PRO_PRODUCT_ID', 89731 );
@@ -78,7 +79,6 @@ class Palm_Beach_Pro {
 
 		// Plugin Root File.
 		define( 'PALM_BEACH_PRO_PLUGIN_FILE', __FILE__ );
-
 	}
 
 	/**
@@ -120,7 +120,6 @@ class Palm_Beach_Pro {
 		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-columns.php';
 		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-horizontal-box.php';
 		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-vertical-box.php';
-
 	}
 
 	/**
@@ -142,7 +141,6 @@ class Palm_Beach_Pro {
 
 		// Add automatic plugin updater from ThemeZee Store API.
 		add_action( 'admin_init', array( __CLASS__, 'plugin_updater' ), 0 );
-
 	}
 
 	/**
@@ -175,7 +173,6 @@ class Palm_Beach_Pro {
 
 		// Add Custom CSS.
 		wp_add_inline_style( 'palm-beach-pro', $custom_css );
-
 	}
 
 	/**
@@ -227,16 +224,14 @@ class Palm_Beach_Pro {
 
 			// Setup the updater.
 			$palm_beach_pro_updater = new Palm_Beach_Pro_Plugin_Updater( PALM_BEACH_PRO_STORE_API_URL, __FILE__, array(
-					'version' 	=> PALM_BEACH_PRO_VERSION,
-					'license' 	=> $license_key,
-					'item_name' => PALM_BEACH_PRO_NAME,
-					'item_id'   => PALM_BEACH_PRO_PRODUCT_ID,
-					'author' 	=> 'ThemeZee',
-				)
-			);
+				'version'   => PALM_BEACH_PRO_VERSION,
+				'license'   => $license_key,
+				'item_name' => PALM_BEACH_PRO_NAME,
+				'item_id'   => PALM_BEACH_PRO_PRODUCT_ID,
+				'author'    => 'ThemeZee',
+			) );
 
 		endif;
-
 	}
 }
 
