@@ -1,0 +1,25 @@
+.footer-social-icons-wrap {
+	padding: 2em 0;
+	border-top: 1px solid #e5e5e5;
+	background: #fff;
+}
+
+.footer-social-icons .social-icons-menu {
+	text-align: center;
+}
+
+.footer-social-icons .social-icons-menu li {
+	display: inline-block;
+	float: none;
+	margin: 0;
+}
+
+.footer-social-icons .social-icons-menu li a::before {
+	display: inline-block;
+	color: #242424;
+	font-size: 32px;
+}
+
+.footer-social-icons .social-icons-menu li a:hover::before {
+	color: #57b7d7;
+}

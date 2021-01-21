@@ -1,13 +1,16 @@
 /*
  * Palm Beach Pro CSS
  *
- * Copyright(C) 2015, ThemeZee.com - support@themezee.com
- * License: GPL v3
- * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * Copyright(C) 2020, ThemeZee.com - support@themezee.com
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  *
  * @package Palm Beach Pro
  */
 
+/*--------------------------------------------------------------
+# - CSS Variables
+--------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Header Bar
@@ -64,7 +67,7 @@
 
 .top-navigation-menu a:hover,
 .top-navigation-menu a:active {
-	color: rgba(255,255,255,0.5);
+	color: rgba(255, 255, 255, 0.5);
 }
 
 .top-navigation-menu ul {
@@ -78,7 +81,7 @@
 	list-style-type: none;
 }
 
-.top-navigation-menu ul li{
+.top-navigation-menu ul li {
 	position: relative;
 	float: none;
 }
@@ -145,8 +148,8 @@
 }
 
 .header-bar .social-icons-menu li a:hover,
-.header-bar .social-icons-menu li a:active  {
-	color: rgba(255,255,255,0.5);
+.header-bar .social-icons-menu li a:active {
+	color: rgba(255, 255, 255, 0.5);
 	text-decoration: none;
 }
 
@@ -201,7 +204,7 @@
 }
 
 /*--------------------------------------------------------------
-# Footer Social Menu
+# Footer Social Icons
 --------------------------------------------------------------*/
 .footer-social-icons-wrap {
 	padding: 2em 0;
@@ -219,13 +222,13 @@
 	margin: 0;
 }
 
-.footer-social-icons .social-icons-menu li a:before {
+.footer-social-icons .social-icons-menu li a::before {
 	display: inline-block;
 	color: #242424;
 	font-size: 32px;
 }
 
-.footer-social-icons .social-icons-menu li a:hover:before {
+.footer-social-icons .social-icons-menu li a:hover::before {
 	color: #57b7d7;
 }
 
@@ -284,13 +287,13 @@
 }
 
 .footer-widgets .widget a:link,
-.footer-widgets .widget a:visited  {
-	color: rgba(255,255,255,0.75);
+.footer-widgets .widget a:visited {
+	color: rgba(255, 255, 255, 0.75);
 }
 
 .footer-widgets .widget a:hover,
-.footer-widgets .widget a:active  {
-	color: rgba(255,255,255,0.5);
+.footer-widgets .widget a:active {
+	color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-widgets .widget_tag_cloud .tagcloud a:link,
@@ -304,7 +307,7 @@
 }
 
 /*--------------------------------------------------------------
-# Footer Navigation
+# Footer Menu
 --------------------------------------------------------------*/
 .footer-navigation {
 	display: inline-block;
@@ -377,7 +380,7 @@
 	border-color: #57b7d7;
 }
 
-.scroll-to-top-button:after {
+.scroll-to-top-button::after {
 	display: inline-block;
 	margin: 0 0 0 3px;
 	content: '\f432';
@@ -398,7 +401,6 @@
 ## Desktop X-Large ( < 1200px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 70em) {
-
 	/* Magazine Widgets */
 	.widget-magazine-horizontal-box .large-post .wp-post-image,
 	.widget-magazine-vertical-box .large-post,
@@ -421,7 +423,6 @@
 ## Desktop Medium ( < 1040px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 65em) {
-
 	/* Four Column Footer Widgets */
 	.footer-widget-column:nth-child(1):nth-last-child(4),
 	.footer-widget-column:nth-child(2):nth-last-child(3),
@@ -439,14 +440,12 @@
 ## Desktop Small ( < 960px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 60em) {
-
 	/* Magazine Widgets */
 	.widget-magazine-horizontal-box .large-post .entry-content .more-link {
 		display: none;
 	}
 
 	/*** Mobile Top Navigation ***/
-
 	/* Reset */
 	.top-navigation-menu {
 		margin: 0;
@@ -497,7 +496,7 @@
 	.top-navigation-toggle:hover,
 	.top-navigation-toggle:active,
 	.top-navigation-toggle:focus {
-		color: rgba(255,255,255,0.5);
+		color: rgba(255, 255, 255, 0.5);
 		background: none;
 		cursor: pointer;
 	}
@@ -569,7 +568,7 @@
 	}
 
 	.top-navigation-menu .submenu-dropdown-toggle:hover {
-		color: rgba(255,255,255,0.5);
+		color: rgba(255, 255, 255, 0.5);
 		cursor: pointer;
 	}
 
@@ -613,7 +612,6 @@
 ## Tablet Medium ( < 800px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 50em) {
-
 	/* Magazine Widgets */
 	.widget-magazine-horizontal-box .large-post .entry-content {
 		display: none;
@@ -644,7 +642,6 @@
 ## Tablet Small ( < 720px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 45em) {
-
 	/* Magazine Post Widgets */
 	.widget-magazine-vertical-box .large-post .entry-content {
 		display: none;
@@ -655,7 +652,6 @@
 ## Mobile Extra Large ( < 640px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 40em) {
-
 	/* Footer Navigation Menu */
 	.footer-navigation-menu li,
 	.footer-navigation-menu a {
@@ -667,7 +663,6 @@
 ## Mobile Large ( < 560px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 35em) {
-
 	/* Magazine Posts Columns Widget */
 	.widget-magazine-columns .magazine-column-left,
 	.widget-magazine-columns .magazine-column-right {
@@ -731,7 +726,6 @@
 ## Mobile Small ( < 320px )
 --------------------------------------------------------------*/
 @media only screen and (max-width: 25em) {
-
 	/* Footer Social Icons */
 	.footer-social-icons-wrap {
 		padding: 1em 0;

@@ -1,0 +1,45 @@
+/* Magazine Horizontal Boxed Widget */
+.widget-magazine-horizontal-box .large-post .wp-post-image {
+	float: left;
+	box-sizing: border-box;
+	margin: 0;
+	padding-right: 1.25em;
+	width: 50%;
+}
+
+.widget-magazine-horizontal-box .large-post .post-content {
+	float: right;
+	box-sizing: border-box;
+	padding-left: 1.25em;
+	width: 50%;
+}
+
+/* Magazine Vertical Boxed Widget */
+.widget-magazine-vertical-box .large-post {
+	float: left;
+	box-sizing: border-box;
+	padding-right: 1.25em;
+	width: 50%;
+}
+
+.widget-magazine-vertical-box .small-posts {
+	float: right;
+	box-sizing: border-box;
+	padding-left: 1.25em;
+	width: 50%;
+}
+
+/* Magazine Posts Columns Widget */
+.widget-magazine-columns .magazine-column-left {
+	float: left;
+	box-sizing: border-box;
+	padding-right: 1.25em;
+	width: 50%;
+}
+
+.widget-magazine-columns .magazine-column-right {
+	float: right;
+	box-sizing: border-box;
+	padding-left: 1.25em;
+	width: 50%;
+}

@@ -1,0 +1,37 @@
+.footer-navigation {
+	display: inline-block;
+	float: right;
+	margin-top: 1.2em;
+}
+
+.footer-navigation-menu {
+	position: relative;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+.footer-navigation-menu li {
+	position: relative;
+	float: left;
+}
+
+.footer-navigation-menu a {
+	display: block;
+	padding: 0.75em;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+.footer-navigation-menu a:link,
+.footer-navigation-menu a:visited {
+	color: #242424;
+	text-decoration: none;
+}
+
+.footer-navigation-menu a:hover,
+.footer-navigation-menu a:active {
+	color: #57b7d7;
+}
