@@ -1,6 +1,6 @@
 <?php
 /**
- * Footer Widgets
+ * Header Bar
  *
  * Registers footer widget areas and hooks into the Palm Beach theme to display widgets
  *
@@ -8,7 +8,9 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Header Bar Class
@@ -29,7 +31,6 @@ class Palm_Beach_Pro_Header_Bar {
 
 		// Display Header Bar.
 		add_action( 'palm_beach_header_bar', array( __CLASS__, 'display_header_bar' ) );
-
 	}
 
 	/**
@@ -54,41 +55,63 @@ class Palm_Beach_Pro_Header_Bar {
 				// Display Social Icons Menu.
 				wp_nav_menu( array(
 					'theme_location' => 'social',
-					'container' => false,
-					'menu_class' => 'social-icons-menu',
-					'echo' => true,
-					'fallback_cb' => '',
-					'link_before' => '<span class="screen-reader-text">',
-					'link_after' => '</span>',
-					'depth' => 1,
-					)
-				);
+					'container'      => false,
+					'menu_class'     => 'social-icons-menu',
+					'echo'           => true,
+					'fallback_cb'    => '',
+					'link_before'    => '<span class = "screen-reader-text">',
+					'link_after'     => '</span>',
+					'depth'          => 1,
+				) );
 
 				echo '</div>';
-
 			}
 
 			// Check if there is a top navigation menu.
-			if ( has_nav_menu( 'secondary' ) ) {
+			if ( has_nav_menu( 'secondary' ) ) : ?>
 
-				echo '<nav id="top-navigation" class="secondary-navigation navigation clearfix" role="navigation">';
+				<button class="secondary-menu-toggle menu-toggle" aria-controls="secondary-menu" aria-expanded="false" <?php self::amp_menu_toggle(); ?>>
+					<?php
+					echo self::get_svg( 'menu' );
+					echo self::get_svg( 'close' );
+					?>
+					<span class="menu-toggle-text screen-reader-text"><?php esc_html_e( 'Menu', 'palm-beach-pro' ); ?></span>
+				</button>
 
-				// Display Top Navigation.
-				wp_nav_menu( array(
-					'theme_location' => 'secondary',
-					'container' => false,
-					'menu_class' => 'top-navigation-menu',
-					'echo' => true,
-					'fallback_cb' => '',
-					)
-				);
+				<div class="secondary-navigation">
 
-				echo '</nav>';
+					<nav class="top-navigation" role="navigation" <?php self::amp_menu_is_toggled(); ?> aria-label="<?php esc_attr_e( 'Secondary Menu', 'palm-beach-pro' ); ?>">
 
-			}
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'secondary',
+								'menu_id'        => 'secondary-menu',
+								'container'      => false,
+							)
+						);
+						?>
+
+					</nav>
+
+				</div><!-- .secondary-navigation -->
+
+				<?php
+			endif;
 
 			echo '</div>';
 			echo '</div>';
+		}
+	}
+
+	/**
+	 * Get SVG icon.
+	 *
+	 * @return void
+	 */
+	static function get_svg( $icon ) {
+		if ( function_exists( 'palm_beach_get_svg' ) ) {
+			return palm_beach_get_svg( $icon );
 		}
 	}
 
@@ -106,9 +129,27 @@ class Palm_Beach_Pro_Header_Bar {
 
 		register_nav_menus( array(
 			'secondary' => esc_html__( 'Top Navigation', 'palm-beach-pro' ),
-			'social' => esc_html__( 'Header Social Icons', 'palm-beach-pro' ),
+			'social'    => esc_html__( 'Header Social Icons', 'palm-beach-pro' ),
 		) );
+	}
 
+	/**
+	 * Adds amp support for menu toggle.
+	 */
+	static function amp_menu_toggle() {
+		if ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) {
+			echo "[aria-expanded]=\"secondaryMenuExpanded? 'true' : 'false'\" ";
+			echo 'on="tap:AMP.setState({secondaryMenuExpanded: !secondaryMenuExpanded})"';
+		}
+	}
+
+	/**
+	 * Adds amp support for mobile dropdown navigation menu.
+	 */
+	static function amp_menu_is_toggled() {
+		if ( function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) {
+			echo "[class]=\"'top-navigation' + ( secondaryMenuExpanded ? ' toggled-on' : '' )\"";
+		}
 	}
 }
 
