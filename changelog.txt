@@ -2,6 +2,12 @@
 Palm Beach Pro Changelog
 ===================================
 
+Version 1.6
+-----------------------------------
+* updated styles and scripts of top navigation menu
+* updated color settings for new navigation menus
+* added support for the official AMP plugin
+
 Version 1.5.1
 -----------------------------------
 * display Scroll-to-Top button on all screen sizes
