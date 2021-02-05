@@ -123,8 +123,8 @@ class Palm_Beach_Pro_Custom_Fonts {
 
 			$custom_css .= '
 				/* Navigation Font Setting */
-				.top-navigation-menu a,
-				.main-navigation-menu a,
+				.top-navigation ul,
+				.main-navigation ul,
 				.footer-navigation-menu a {
 					font-family: ' . self::get_font_family( $theme_options['navi_font'] ) . ';
 				}
