@@ -90,11 +90,10 @@ class Palm_Beach_Pro_Custom_Colors {
 				a:visited,
 				.site-title a:hover,
 				.site-title a:active,
-				.main-navigation-menu a:hover,
-				.main-navigation-menu a:active,
-				.main-navigation-toggle:hover,
-				.main-navigation-toggle:active,
-				.main-navigation-menu .submenu-dropdown-toggle:hover,
+				.main-navigation ul a:hover,
+				.main-navigation ul a:active,
+				.primary-menu-toggle:hover,
+				.primary-menu-toggle:active,
 				.widget-title a:hover,
 				.widget-title a:active,
 				.entry-title a:hover,
@@ -104,6 +103,15 @@ class Palm_Beach_Pro_Custom_Colors {
 				.footer-social-icons .social-icons-menu li a:hover:before,
 				.has-primary-color {
 					color: ' . $theme_options['link_color'] . ';
+				}
+
+				.primary-menu-toggle:hover .icon,
+				.primary-menu-toggle:active .icon,
+				.main-navigation .dropdown-toggle:hover .icon,
+				.main-navigation .dropdown-toggle:active .icon,
+				.main-navigation ul .menu-item-has-children > a:hover > .icon,
+				.main-navigation ul .menu-item-has-children > a:active > .icon {
+					fill: ' . $theme_options['link_color'] . ';
 				}
 
 				a:hover,
@@ -167,7 +175,7 @@ class Palm_Beach_Pro_Custom_Colors {
 
 			$custom_css .= '
 				.header-bar-wrap,
-				.top-navigation-menu ul {
+				.top-navigation ul ul {
 					background: ' . $theme_options['top_navi_color'] . ';
 				}
 			';
@@ -175,25 +183,38 @@ class Palm_Beach_Pro_Custom_Colors {
 			// Check if a light background color was chosen.
 			if ( self::is_color_light( $theme_options['top_navi_color'] ) ) {
 				$custom_css .= '
-					.top-navigation-menu a:link,
-					.top-navigation-menu a:visited,
-					.top-navigation-toggle,
-					.top-navigation-toggle:focus,
-					.top-navigation-menu .submenu-dropdown-toggle,
+					.top-navigation ul a,
+					.top-navigation ul a:link,
+					.top-navigation ul a:visited,
+					.secondary-menu-toggle,
+					.secondary-menu-toggle:focus,
 					.header-bar .social-icons-menu li a:link,
 					.header-bar .social-icons-menu li a:visited {
 					    color: #000;
 					}
 
-					.top-navigation-menu a:hover,
-					.top-navigation-menu a:active,
-					.top-navigation-toggle:hover,
-					.top-navigation-toggle:active,
-					.top-navigation-menu .submenu-dropdown-toggle:hover,
-					.top-navigation-menu .submenu-dropdown-toggle:active,
+					.secondary-menu-toggle .icon,
+					.top-navigation .dropdown-toggle .icon,
+					.top-navigation ul .menu-item-has-children > a > .icon {
+						fill:  #000;
+					}
+
+					.top-navigation ul a:hover,
+					.top-navigation ul a:active,
+					.secondary-menu-toggle:hover,
+					.secondary-menu-toggle:active,
 					.header-bar .social-icons-menu li a:hover,
 					.header-bar .social-icons-menu li a:active {
 						color: rgba(0,0,0,0.4);
+					}
+
+					.secondary-menu-toggle:hover .icon,
+					.secondary-menu-toggle:active .icon,
+					.top-navigation .dropdown-toggle:hover .icon,
+					.top-navigation .dropdown-toggle:active .icon,
+					.top-navigation ul .menu-item-has-children > a:hover > .icon,
+					.top-navigation ul .menu-item-has-children > a:active > .icon {
+						fill: rgba(0,0,0,0.4);
 					}
 				';
 			}
@@ -204,16 +225,21 @@ class Palm_Beach_Pro_Custom_Colors {
 
 			$custom_css .= '
 				.site-header,
-				.main-navigation-menu ul {
+				.main-navigation ul ul,
+				.main-navigation > ul > li.menu-item-has-children > ul {
 					background: ' . $theme_options['header_color'] . ';
 				}
+
 				.site-header {
 					border-bottom: 1px solid rgba(0,0,0,0.075);
 				}
-				.main-navigation-menu ul {
-					border: 1px solid  rgba(0,0,0,0.075);
+
+				.main-navigation ul ul,
+				.main-navigation > ul > li.menu-item-has-children > ul {
+					border: 1px solid rgba(0,0,0,0.075);
 				}
-				.main-navigation-menu ul a {
+
+				.main-navigation ul ul a {
 					background: rgba(0,0,0,0.025);
 				}
 
@@ -229,29 +255,40 @@ class Palm_Beach_Pro_Custom_Colors {
 				$custom_css .= '
 					.site-title a:link,
 					.site-title a:visited,
-					.main-navigation-menu a:link,
-					.main-navigation-menu a:visited,
-					.main-navigation-toggle,
-					.main-navigation-toggle:focus,
-					.main-navigation-menu .submenu-dropdown-toggle {
+					.main-navigation ul a,
+					.main-navigation ul a:link,
+					.main-navigation ul a:visited,
+					.primary-menu-toggle,
+					.primary-menu-toggle:focus {
 					    color: #fff;
+					}
+
+					.primary-menu-toggle .icon,
+					.main-navigation .dropdown-toggle .icon,
+					.main-navigation ul .menu-item-has-children > a > .icon {
+						fill:  #fff;
 					}
 
 					.site-title a:hover,
 					.site-title a:active,
-					.main-navigation-menu a:hover,
-					.main-navigation-menu a:active,
-					.main-navigation-toggle:hover,
-					.main-navigation-toggle:active,
-					.main-navigation-menu .submenu-dropdown-toggle:hover,
-					.main-navigation-menu .submenu-dropdown-toggle:active {
+					.main-navigation ul a:hover,
+					.main-navigation ul a:active,
+					.primary-menu-toggle:hover,
+					.primary-menu-toggle:active {
 						color: rgba(255,255,255,0.5);
 					}
 
-					@media only screen and (max-width: 60em) {
-						.main-navigation-menu {
-							border-top: 1px solid rgba(255,255,255,0.1);
-						}
+					.primary-menu-toggle:hover .icon,
+					.primary-menu-toggle:active .icon,
+					.main-navigation .dropdown-toggle:hover .icon,
+					.main-navigation .dropdown-toggle:active .icon,
+					.main-navigation ul .menu-item-has-children > a:hover > .icon,
+					.main-navigation ul .menu-item-has-children > a:active > .icon {
+						fill: rgba(255,255,255,0.5);
+					}
+
+					.main-navigation > ul {
+						border-color: rgba(255,255,255,0.1);
 					}
 				';
 			}

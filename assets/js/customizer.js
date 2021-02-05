@@ -11,7 +11,7 @@
 	/* Header Color Option */
 	wp.customize( 'palm_beach_theme_options[top_navi_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.header-bar-wrap, .top-navigation-menu ul' )
+			$( '.header-bar-wrap, .top-navigation ul ul' )
 				.css( 'background', newval );
 
 			var textcolor, hovercolor;
@@ -24,9 +24,9 @@
 				hovercolor = 'rgba(255,255,255,0.5)';
 			}
 
-			$( '.top-navigation-menu a, .top-navigation-toggle, .top-navigation-menu .submenu-dropdown-toggle, .header-bar .social-icons-menu li a' )
+			$( '.top-navigation ul a, .secondary-menu-toggle, .header-bar .social-icons-menu li a' )
 				.css( 'color', textcolor );
-			$('.top-navigation-menu a, .top-navigation-toggle, .top-navigation-menu .submenu-dropdown-toggle, .header-bar .social-icons-menu li a')
+			$('.top-navigation ul a, .secondary-menu-toggle, .header-bar .social-icons-menu li a')
 				.hover( function() { $( this ).css( 'color', hovercolor ); },
 						function() { $( this ).css( 'color', textcolor ); }
 				);
@@ -36,7 +36,7 @@
 	/* Header Color Option */
 	wp.customize( 'palm_beach_theme_options[header_color]', function( value ) {
 		value.bind( function( newval ) {
-			$( '.site-header, .main-navigation-menu ul' )
+			$( '.site-header, .main-navigation ul ul' )
 				.css( 'background', newval );
 
 			var textcolor, hovercolor;
@@ -49,9 +49,9 @@
 				hovercolor = 'rgba(0,0,0,0.4)';
 			}
 
-			$( '.site-title a, .main-navigation-menu a, .main-navigation-toggle, .main-navigation-menu .submenu-dropdown-toggle' )
+			$( '.site-title a, .main-navigation ul a, .primary-menu-toggle' )
 				.css( 'color', textcolor );
-			$('.site-title a, .main-navigation-menu a, .main-navigation-toggle, .main-navigation-menu .submenu-dropdown-toggle')
+			$('.site-title a, .main-navigation ul a, .primary-menu-toggle')
 				.hover( function() { $( this ).css( 'color', hovercolor ); },
 						function() { $( this ).css( 'color', textcolor ); }
 				);
@@ -189,7 +189,7 @@
 			var newFont = newval === 'SystemFontStack' ? systemFont : newval;
 
 			// Set CSS.
-			$( '.top-navigation-menu a, .main-navigation-menu a, .footer-navigation-menu a' )
+			$( '.top-navigation ul a, .main-navigation ul a, .footer-navigation-menu a' )
 				.css( 'font-family', newFont );
 
 		} );
