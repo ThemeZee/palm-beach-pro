@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Palm Beach Pro\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2018-04-13 10:01+0200\n"
-"PO-Revision-Date: 2018-04-13 10:01+0200\n"
+"POT-Creation-Date: 2021-02-11 16:25+0100\n"
+"PO-Revision-Date: 2021-02-11 16:25+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: de_DE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.0.3\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: includes/admin/class-admin-notices.php:52
@@ -158,78 +158,89 @@ msgstr "Lizenz deaktivieren"
 msgid "Activate License"
 msgstr "Lizenz aktivieren"
 
-#: includes/customizer/class-customize-font-control.php:58
+#: includes/customizer/class-customize-font-control.php:51
 msgid "Previous Font"
 msgstr "Vorherige Schriftart"
 
-#: includes/customizer/class-customize-font-control.php:59
+#: includes/customizer/class-customize-font-control.php:52
 msgid "Next Font"
 msgstr "Nächste Schriftart"
 
-#: includes/customizer/class-customize-font-control.php:60
+#: includes/customizer/class-customize-font-control.php:53
 msgctxt "default font button"
 msgid "Default"
 msgstr "Standard"
 
-#: includes/customizer/class-customize-font-control.php:100
-msgid "Local Fonts"
-msgstr "Lokale Schriftarten"
-
-#: includes/customizer/class-customize-font-control.php:108
-msgid "Google Web Fonts"
-msgstr "Google Schriftarten"
-
-#: includes/modules/class-custom-colors.php:343
+#: includes/modules/class-custom-colors.php:438
 msgid "Theme Colors"
 msgstr "Theme Farben"
 
-#: includes/modules/class-custom-colors.php:362
+#: includes/modules/class-custom-colors.php:455
 msgctxt "color setting"
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-custom-colors.php:379
+#: includes/modules/class-custom-colors.php:471
 msgctxt "color setting"
 msgid "Header"
 msgstr "Header"
 
-#: includes/modules/class-custom-colors.php:396
+#: includes/modules/class-custom-colors.php:487
 msgctxt "color setting"
 msgid "Links and Buttons"
 msgstr "Links und Buttons"
 
-#: includes/modules/class-custom-colors.php:413
+#: includes/modules/class-custom-colors.php:503
 msgctxt "color setting"
 msgid "Headings"
 msgstr "Überschriften"
 
-#: includes/modules/class-custom-colors.php:430
+#: includes/modules/class-custom-colors.php:519
 msgctxt "color setting"
 msgid "Footer Widgets"
 msgstr "Footer Widgets"
 
-#: includes/modules/class-custom-colors.php:447
+#: includes/modules/class-custom-colors.php:535
 msgctxt "color setting"
 msgid "Footer"
 msgstr "Footer"
 
-#: includes/modules/class-custom-fonts.php:203
-msgid "Theme Fonts"
-msgstr "Theme Schriftarten"
+#: includes/modules/class-custom-fonts.php:214
+msgid "Typography"
+msgstr "Typografie"
 
-#: includes/modules/class-custom-fonts.php:222
-msgid "Base Font"
+#: includes/modules/class-custom-fonts.php:232
+msgid "Body Font"
 msgstr "Basis Schriftart"
 
-#: includes/modules/class-custom-fonts.php:238
-msgctxt "font setting"
+#: includes/modules/class-custom-fonts.php:249
+msgctxt "Font Setting"
 msgid "Headings"
 msgstr "Überschriften"
 
-#: includes/modules/class-custom-fonts.php:254
-msgctxt "font setting"
+#: includes/modules/class-custom-fonts.php:265
+#: includes/modules/class-custom-fonts.php:314
+#: includes/modules/class-custom-fonts.php:363
+msgctxt "Font Setting"
+msgid "Bold"
+msgstr "Fett"
+
+#: includes/modules/class-custom-fonts.php:281
+#: includes/modules/class-custom-fonts.php:330
+#: includes/modules/class-custom-fonts.php:379
+msgctxt "Font Setting"
+msgid "Uppercase"
+msgstr "Großbuchstaben"
+
+#: includes/modules/class-custom-fonts.php:298
+msgctxt "Font Setting"
 msgid "Navigation"
 msgstr "Navigation"
+
+#: includes/modules/class-custom-fonts.php:347
+msgctxt "Font Setting"
+msgid "Widget Titles"
+msgstr "Widget-Titel"
 
 #: includes/modules/class-footer-line.php:151
 msgid "Footer Settings"
@@ -283,19 +294,27 @@ msgstr "Footer Spalte 4"
 msgid "Appears on the fourth footer column."
 msgstr "Erscheint in der vierten Footer Spalte."
 
-#: includes/modules/class-header-bar.php:108
+#: includes/modules/class-header-bar.php:78
+msgid "Menu"
+msgstr "Menü"
+
+#: includes/modules/class-header-bar.php:83
+msgid "Secondary Menu"
+msgstr "Sekundäres Menü"
+
+#: includes/modules/class-header-bar.php:131
 msgid "Top Navigation"
 msgstr "Obere Navigation"
 
-#: includes/modules/class-header-bar.php:109
+#: includes/modules/class-header-bar.php:132
 msgid "Header Social Icons"
 msgstr "Header Social Icons"
 
-#: includes/modules/class-scroll-to-top.php:65
+#: includes/modules/class-scroll-to-top.php:67
 msgid "Scroll to Top"
 msgstr "Nach oben scrollen"
 
-#: includes/modules/class-scroll-to-top.php:81
+#: includes/modules/class-scroll-to-top.php:83
 msgid "Display Scroll to Top Button"
 msgstr "Button zum Nach oben Scrollen anzeigen"
 
@@ -375,9 +394,22 @@ msgstr "Magazin (Vertikale Box)"
 msgid "Displays your posts from a selected category in a vertical box."
 msgstr "Zeigt die Beiträge einer gewählten Kategorie in einer vertikalen Box."
 
-#: palm-beach-pro.php:206
+#: palm-beach-pro.php:203
 msgid "Settings"
 msgstr "Einstellungen"
+
+#~ msgid "Local Fonts"
+#~ msgstr "Lokale Schriftarten"
+
+#~ msgid "Google Web Fonts"
+#~ msgstr "Google Schriftarten"
+
+#~ msgid "Theme Fonts"
+#~ msgstr "Theme Schriftarten"
+
+#~ msgctxt "font setting"
+#~ msgid "Headings"
+#~ msgstr "Überschriften"
 
 #~ msgid "Choose available Fonts"
 #~ msgstr "Verfügbare Schriftarten wählen"
