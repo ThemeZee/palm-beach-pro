@@ -8,7 +8,9 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 /**
  * Customizer Class
@@ -43,11 +45,7 @@ class Palm_Beach_Pro_Customizer {
 	static function get_theme_options() {
 
 		// Merge Theme Options Array from Database with Default Options Array.
-		$theme_options = wp_parse_args( get_option( 'palm_beach_theme_options', array() ), self::get_default_options() );
-
-		// Return theme options.
-		return $theme_options;
-
+		return wp_parse_args( get_option( 'palm_beach_theme_options', array() ), self::get_default_options() );
 	}
 
 
@@ -59,24 +57,30 @@ class Palm_Beach_Pro_Customizer {
 	static function get_default_options() {
 
 		$default_options = array(
-			'logo_spacing'         => 10,
-			'navi_spacing'         => 10,
-			'scroll_to_top'        => false,
-			'footer_text'          => '',
-			'credit_link'          => true,
-			'top_navi_color'       => '#242424',
-			'header_color'         => '#ffffff',
-			'link_color'           => '#57b7d7',
-			'title_color'          => '#242424',
-			'footer_widgets_color' => '#242424',
-			'footer_color'         => '#ffffff',
-			'text_font'            => 'Hind',
-			'title_font'           => 'Montserrat',
-			'navi_font'            => 'Hind',
+			'logo_spacing'              => 10,
+			'navi_spacing'              => 10,
+			'scroll_to_top'             => false,
+			'footer_text'               => '',
+			'credit_link'               => true,
+			'top_navi_color'            => '#242424',
+			'header_color'              => '#ffffff',
+			'link_color'                => '#57b7d7',
+			'title_color'               => '#242424',
+			'footer_widgets_color'      => '#242424',
+			'footer_color'              => '#ffffff',
+			'text_font'                 => 'Hind',
+			'title_font'                => 'Montserrat',
+			'title_is_bold'             => true,
+			'title_is_uppercase'        => false,
+			'navi_font'                 => 'Hind',
+			'navi_is_bold'              => false,
+			'navi_is_uppercase'         => false,
+			'widget_title_font'         => 'Rambla',
+			'widget_title_is_bold'      => false,
+			'widget_title_is_uppercase' => false,
 		);
 
 		return $default_options;
-
 	}
 
 	/**
@@ -85,9 +89,7 @@ class Palm_Beach_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_js() {
-
-		wp_enqueue_script( 'palm-beach-pro-customizer-js', PALM_BEACH_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), PALM_BEACH_PRO_VERSION, true );
-
+		wp_enqueue_script( 'palm-beach-pro-customizer-js', PALM_BEACH_PRO_PLUGIN_URL . 'assets/js/customizer.js', array( 'customize-preview' ), '20201119', true );
 	}
 
 	/**
@@ -96,9 +98,7 @@ class Palm_Beach_Pro_Customizer {
 	 * @return void
 	 */
 	static function customize_preview_css() {
-
-		wp_enqueue_style( 'palm-beach-pro-customizer-css', PALM_BEACH_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), PALM_BEACH_PRO_VERSION );
-
+		wp_enqueue_style( 'palm-beach-pro-customizer-css', PALM_BEACH_PRO_PLUGIN_URL . 'assets/css/customizer.css', array(), '20201119' );
 	}
 }
 
