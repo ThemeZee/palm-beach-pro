@@ -43,3 +43,80 @@
 	padding-left: 1.25em;
 	width: 50%;
 }
+
+@media only screen and (max-width: 70em) {
+	.widget-magazine-horizontal-box .large-post .wp-post-image,
+	.widget-magazine-vertical-box .large-post,
+	.widget-magazine-columns .magazine-column-left {
+		padding-right: 1em;
+	}
+
+	.widget-magazine-horizontal-box .large-post .post-content,
+	.widget-magazine-vertical-box .small-posts,
+	.widget-magazine-columns .magazine-column-right {
+		padding-left: 1em;
+	}
+
+	.widget-magazine-vertical-box .large-post .entry-content .more-link {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 60em) {
+	.widget-magazine-horizontal-box .large-post .entry-content .more-link {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 50em) {
+	.widget-magazine-horizontal-box .large-post .entry-content {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 45em) {
+	.widget-magazine-vertical-box .large-post .entry-content {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 35em) {
+
+	/* Magazine Posts Columns Widget */
+	.widget-magazine-columns .magazine-column-left,
+	.widget-magazine-columns .magazine-column-right {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	/* Magazine Vertical Boxed Widget */
+	.widget-magazine-vertical-box .large-post,
+	.widget-magazine-vertical-box .small-posts {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	.widget-magazine-vertical-box .large-post .entry-content,
+	.widget-magazine-vertical-box .large-post .entry-content .more-link {
+		display: block;
+	}
+
+	/* Magazine Horizontal Boxed Widget */
+	.widget-magazine-horizontal-box .large-post .wp-post-image,
+	.widget-magazine-horizontal-box .large-post .post-content {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	.widget-magazine-horizontal-box .large-post .wp-post-image {
+		margin: 0 0 0.5em;
+	}
+
+	.widget-magazine-horizontal-box .large-post .entry-content,
+	.widget-magazine-horizontal-box .large-post .entry-content .more-link {
+		display: block;
+	}
+}

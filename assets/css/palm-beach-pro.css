@@ -371,6 +371,82 @@
 	width: 50%;
 }
 
+@media only screen and (max-width: 70em) {
+	.widget-magazine-horizontal-box .large-post .wp-post-image,
+	.widget-magazine-vertical-box .large-post,
+	.widget-magazine-columns .magazine-column-left {
+		padding-right: 1em;
+	}
+
+	.widget-magazine-horizontal-box .large-post .post-content,
+	.widget-magazine-vertical-box .small-posts,
+	.widget-magazine-columns .magazine-column-right {
+		padding-left: 1em;
+	}
+
+	.widget-magazine-vertical-box .large-post .entry-content .more-link {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 60em) {
+	.widget-magazine-horizontal-box .large-post .entry-content .more-link {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 50em) {
+	.widget-magazine-horizontal-box .large-post .entry-content {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 45em) {
+	.widget-magazine-vertical-box .large-post .entry-content {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 35em) {
+	/* Magazine Posts Columns Widget */
+	.widget-magazine-columns .magazine-column-left,
+	.widget-magazine-columns .magazine-column-right {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	/* Magazine Vertical Boxed Widget */
+	.widget-magazine-vertical-box .large-post,
+	.widget-magazine-vertical-box .small-posts {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	.widget-magazine-vertical-box .large-post .entry-content,
+	.widget-magazine-vertical-box .large-post .entry-content .more-link {
+		display: block;
+	}
+
+	/* Magazine Horizontal Boxed Widget */
+	.widget-magazine-horizontal-box .large-post .wp-post-image,
+	.widget-magazine-horizontal-box .large-post .post-content {
+		float: none;
+		padding: 0;
+		width: 100%;
+	}
+
+	.widget-magazine-horizontal-box .large-post .wp-post-image {
+		margin: 0 0 0.5em;
+	}
+
+	.widget-magazine-horizontal-box .large-post .entry-content,
+	.widget-magazine-horizontal-box .large-post .entry-content .more-link {
+		display: block;
+	}
+}
+
 /*--------------------------------------------------------------
 # Footer Social Icons
 --------------------------------------------------------------*/
@@ -474,6 +550,52 @@
 	color: #fff;
 }
 
+@media only screen and (max-width: 65em) {
+	.footer-widget-column:nth-child(1):nth-last-child(4),
+	.footer-widget-column:nth-child(2):nth-last-child(3),
+	.footer-widget-column:nth-child(3):nth-last-child(2),
+	.footer-widget-column:nth-child(4):nth-last-child(1) {
+		width: 50%;
+	}
+
+	.footer-widget-column:nth-child(3):nth-last-child(2) {
+		clear: left;
+	}
+}
+
+@media only screen and (max-width: 50em) {
+	.footer-widgets-background {
+		padding: 1.5em 0 0;
+	}
+
+	.footer-widgets {
+		margin-right: -1.5em;
+	}
+
+	.footer-widget-column {
+		padding-right: 1.5em;
+	}
+
+	/* Three Column Footer Widgets */
+	.footer-widget-column:nth-child(1):nth-last-child(3),
+	.footer-widget-column:nth-child(2):nth-last-child(2),
+	.footer-widget-column:nth-child(3):nth-last-child(1) {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 35em) {
+	.footer-widgets {
+		margin-right: 0;
+	}
+
+	#footer-widgets .footer-widget-column {
+		float: none;
+		padding-right: 0;
+		width: 100%;
+	}
+}
+
 /*--------------------------------------------------------------
 # Footer Menu
 --------------------------------------------------------------*/
@@ -513,6 +635,50 @@
 .footer-navigation-menu a:hover,
 .footer-navigation-menu a:active {
 	color: #57b7d7;
+}
+
+@media only screen and (max-width: 60em) {
+	.footer-navigation {
+		display: block;
+		float: none;
+		text-align: center;
+	}
+
+	.footer-navigation-menu li {
+		display: inline-block;
+		float: none;
+	}
+
+	.footer-navigation-menu a {
+		display: inline-block;
+	}
+}
+
+@media only screen and (max-width: 40em) {
+	.footer-navigation-menu li,
+	.footer-navigation-menu a {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 35em) {
+	.footer-social-icons-wrap {
+		padding: 1.5em 0;
+	}
+
+	.footer-social-icons .social-icons-menu li a:before {
+		font-size: 28px;
+	}
+}
+
+@media only screen and (max-width: 25em) {
+	.footer-social-icons-wrap {
+		padding: 1em 0;
+	}
+
+	.footer-social-icons .social-icons-menu li a:before {
+		font-size: 24px;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -559,201 +725,4 @@
 	line-height: 1;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-/*--------------------------------------------------------------
-# Media Queries
---------------------------------------------------------------*/
-
-/*--------------------------------------------------------------
-## Desktop X-Large ( < 1200px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 70em) {
-	/* Magazine Widgets */
-	.widget-magazine-horizontal-box .large-post .wp-post-image,
-	.widget-magazine-vertical-box .large-post,
-	.widget-magazine-columns .magazine-column-left {
-		padding-right: 1em;
-	}
-
-	.widget-magazine-horizontal-box .large-post .post-content,
-	.widget-magazine-vertical-box .small-posts,
-	.widget-magazine-columns .magazine-column-right {
-		padding-left: 1em;
-	}
-
-	.widget-magazine-vertical-box .large-post .entry-content .more-link {
-		display: none;
-	}
-}
-
-/*--------------------------------------------------------------
-## Desktop Medium ( < 1040px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 65em) {
-	/* Four Column Footer Widgets */
-	.footer-widget-column:nth-child(1):nth-last-child(4),
-	.footer-widget-column:nth-child(2):nth-last-child(3),
-	.footer-widget-column:nth-child(3):nth-last-child(2),
-	.footer-widget-column:nth-child(4):nth-last-child(1) {
-		width: 50%;
-	}
-
-	.footer-widget-column:nth-child(3):nth-last-child(2) {
-		clear: left;
-	}
-}
-
-/*--------------------------------------------------------------
-## Desktop Small ( < 960px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 60em) {
-	/* Magazine Widgets */
-	.widget-magazine-horizontal-box .large-post .entry-content .more-link {
-		display: none;
-	}
-
-	/* Footer Navigation Menu */
-	.footer-navigation {
-		display: block;
-		float: none;
-		text-align: center;
-	}
-
-	.footer-navigation-menu li {
-		display: inline-block;
-		float: none;
-	}
-
-	.footer-navigation-menu a {
-		display: inline-block;
-	}
-}
-
-/*--------------------------------------------------------------
-## Tablet Medium ( < 800px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 50em) {
-	/* Magazine Widgets */
-	.widget-magazine-horizontal-box .large-post .entry-content {
-		display: none;
-	}
-
-	/* Footer Widgets */
-	.footer-widgets-background {
-		padding: 1.5em 0 0;
-	}
-
-	.footer-widgets {
-		margin-right: -1.5em;
-	}
-
-	.footer-widget-column {
-		padding-right: 1.5em;
-	}
-
-	/* Three Column Footer Widgets */
-	.footer-widget-column:nth-child(1):nth-last-child(3),
-	.footer-widget-column:nth-child(2):nth-last-child(2),
-	.footer-widget-column:nth-child(3):nth-last-child(1) {
-		width: 100%;
-	}
-}
-
-/*--------------------------------------------------------------
-## Tablet Small ( < 720px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 45em) {
-	/* Magazine Post Widgets */
-	.widget-magazine-vertical-box .large-post .entry-content {
-		display: none;
-	}
-}
-
-/*--------------------------------------------------------------
-## Mobile Extra Large ( < 640px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 40em) {
-	/* Footer Navigation Menu */
-	.footer-navigation-menu li,
-	.footer-navigation-menu a {
-		display: block;
-	}
-}
-
-/*--------------------------------------------------------------
-## Mobile Large ( < 560px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 35em) {
-	/* Magazine Posts Columns Widget */
-	.widget-magazine-columns .magazine-column-left,
-	.widget-magazine-columns .magazine-column-right {
-		float: none;
-		padding: 0;
-		width: 100%;
-	}
-
-	/* Magazine Vertical Boxed Widget */
-	.widget-magazine-vertical-box .large-post,
-	.widget-magazine-vertical-box .small-posts {
-		float: none;
-		padding: 0;
-		width: 100%;
-	}
-
-	.widget-magazine-vertical-box .large-post .entry-content,
-	.widget-magazine-vertical-box .large-post .entry-content .more-link {
-		display: block;
-	}
-
-	/* Magazine Horizontal Boxed Widget */
-	.widget-magazine-horizontal-box .large-post .wp-post-image,
-	.widget-magazine-horizontal-box .large-post .post-content {
-		float: none;
-		padding: 0;
-		width: 100%;
-	}
-
-	.widget-magazine-horizontal-box .large-post .wp-post-image {
-		margin: 0 0 0.5em;
-	}
-
-	.widget-magazine-horizontal-box .large-post .entry-content,
-	.widget-magazine-horizontal-box .large-post .entry-content .more-link {
-		display: block;
-	}
-
-	/* Footer Social Icons */
-	.footer-social-icons-wrap {
-		padding: 1.5em 0;
-	}
-
-	.footer-social-icons .social-icons-menu li a:before {
-		font-size: 28px;
-	}
-
-	/* Footer Widgets */
-	.footer-widgets {
-		margin-right: 0;
-	}
-
-	#footer-widgets .footer-widget-column {
-		float: none;
-		padding-right: 0;
-		width: 100%;
-	}
-}
-
-/*--------------------------------------------------------------
-## Mobile Small ( < 320px )
---------------------------------------------------------------*/
-@media only screen and (max-width: 25em) {
-	/* Footer Social Icons */
-	.footer-social-icons-wrap {
-		padding: 1em 0;
-	}
-
-	.footer-social-icons .social-icons-menu li a:before {
-		font-size: 24px;
-	}
 }

@@ -68,3 +68,49 @@
 .footer-widgets .widget_tag_cloud .tagcloud a:active {
 	color: #fff;
 }
+
+@media only screen and (max-width: 65em) {
+	.footer-widget-column:nth-child(1):nth-last-child(4),
+	.footer-widget-column:nth-child(2):nth-last-child(3),
+	.footer-widget-column:nth-child(3):nth-last-child(2),
+	.footer-widget-column:nth-child(4):nth-last-child(1) {
+		width: 50%;
+	}
+
+	.footer-widget-column:nth-child(3):nth-last-child(2) {
+		clear: left;
+	}
+}
+
+@media only screen and (max-width: 50em) {
+	.footer-widgets-background {
+		padding: 1.5em 0 0;
+	}
+
+	.footer-widgets {
+		margin-right: -1.5em;
+	}
+
+	.footer-widget-column {
+		padding-right: 1.5em;
+	}
+
+	/* Three Column Footer Widgets */
+	.footer-widget-column:nth-child(1):nth-last-child(3),
+	.footer-widget-column:nth-child(2):nth-last-child(2),
+	.footer-widget-column:nth-child(3):nth-last-child(1) {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 35em) {
+	.footer-widgets {
+		margin-right: 0;
+	}
+
+	#footer-widgets .footer-widget-column {
+		float: none;
+		padding-right: 0;
+		width: 100%;
+	}
+}

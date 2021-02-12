@@ -35,3 +35,47 @@
 .footer-navigation-menu a:active {
 	color: #57b7d7;
 }
+
+@media only screen and (max-width: 60em) {
+	.footer-navigation {
+		display: block;
+		float: none;
+		text-align: center;
+	}
+
+	.footer-navigation-menu li {
+		display: inline-block;
+		float: none;
+	}
+
+	.footer-navigation-menu a {
+		display: inline-block;
+	}
+}
+
+@media only screen and (max-width: 40em) {
+	.footer-navigation-menu li,
+	.footer-navigation-menu a {
+		display: block;
+	}
+}
+
+@media only screen and (max-width: 35em) {
+	.footer-social-icons-wrap {
+		padding: 1.5em 0;
+	}
+
+	.footer-social-icons .social-icons-menu li a:before {
+		font-size: 28px;
+	}
+}
+
+@media only screen and (max-width: 25em) {
+	.footer-social-icons-wrap {
+		padding: 1em 0;
+	}
+
+	.footer-social-icons .social-icons-menu li a:before {
+		font-size: 24px;
+	}
+}
