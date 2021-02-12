@@ -2,6 +2,13 @@
 Palm Beach Pro Changelog
 ===================================
 
+Version 1.7
+-----------------------------------
+* added CSS variables for font styles
+* updated Typography options
+* added minified JavaScript files
+* restructured CSS media queries
+
 Version 1.6
 -----------------------------------
 * updated styles and scripts of top navigation menu
