@@ -32,9 +32,6 @@ class Palm_Beach_Pro_Custom_Colors {
 		// Add Custom Color CSS code to custom stylesheet output.
 		add_filter( 'palm_beach_pro_custom_css_stylesheet', array( __CLASS__, 'custom_colors_css' ) );
 
-		// Add Custom Color CSS code to the Gutenberg editor.
-		add_action( 'enqueue_block_editor_assets', array( __CLASS__, 'custom_editor_colors_css' ) );
-
 		// Add Custom Color Settings.
 		add_action( 'customize_register', array( __CLASS__, 'color_settings' ) );
 	}
@@ -53,8 +50,12 @@ class Palm_Beach_Pro_Custom_Colors {
 		// Get Default Fonts from settings.
 		$default_options = Palm_Beach_Pro_Customizer::get_default_options();
 
+		// Color Variables.
+		$color_variables = '';
+
 		// Set Title Color.
 		if ( $theme_options['title_color'] != $default_options['title_color'] ) {
+			$color_variables .= '--page-background-color: ' . $theme_options['page_bg_color'] . ';';
 
 			$custom_css .= '
 				.widget-title,
@@ -373,57 +374,12 @@ class Palm_Beach_Pro_Custom_Colors {
 			}
 		}
 
+		// Set Color Variables.
+		if ( '' !== $color_variables ) {
+			$custom_css .= ':root {' . $color_variables . '}';
+		}
+
 		return $custom_css;
-	}
-
-	/**
-	 * Adds Color CSS styles in the Gutenberg Editor to override default colors
-	 *
-	 * @return void
-	 */
-	static function custom_editor_colors_css() {
-
-		// Get Theme Options from Database.
-		$theme_options = Palm_Beach_Pro_Customizer::get_theme_options();
-
-		// Get Default Fonts from settings.
-		$default_options = Palm_Beach_Pro_Customizer::get_default_options();
-
-		// Set Primary Color.
-		if ( $theme_options['link_color'] !== $default_options['link_color'] ) {
-
-			$custom_css = '
-				.has-primary-color,
-				.edit-post-visual-editor .editor-block-list__block a {
-					color: ' . $theme_options['link_color'] . ';
-				}
-				.has-primary-background-color {
-					background-color: ' . $theme_options['link_color'] . ';
-				}
-			';
-
-			wp_add_inline_style( 'palm-beach-editor-styles', $custom_css );
-		}
-	}
-
-	/**
-	 * Change primary color in Gutenberg Editor.
-	 *
-	 * @return array $editor_settings
-	 */
-	static function change_primary_color( $color ) {
-		// Get Theme Options from Database.
-		$theme_options = Palm_Beach_Pro_Customizer::get_theme_options();
-
-		// Get Default Fonts from settings.
-		$default_options = Palm_Beach_Pro_Customizer::get_default_options();
-
-		// Set Primary Color.
-		if ( $theme_options['link_color'] !== $default_options['link_color'] ) {
-			$color = $theme_options['link_color'];
-		}
-
-		return $color;
 	}
 
 	/**
@@ -579,4 +535,3 @@ class Palm_Beach_Pro_Custom_Colors {
 
 // Run Class.
 add_action( 'init', array( 'Palm_Beach_Pro_Custom_Colors', 'setup' ) );
-add_filter( 'palm_beach_primary_color', array( 'Palm_Beach_Pro_Custom_Colors', 'change_primary_color' ) );
