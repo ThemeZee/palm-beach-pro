@@ -1,7 +1,8 @@
 .footer-social-icons-wrap {
 	padding: 2em 0;
-	border-top: 1px solid #e5e5e5;
-	background: #fff;
+	border-top: 1px solid;
+	@include border-color(--light-border-color);
+	@include background(--page-background-color);
 }
 
 .footer-social-icons .social-icons-menu {
@@ -16,10 +17,10 @@
 
 .footer-social-icons .social-icons-menu li a::before {
 	display: inline-block;
-	color: #242424;
+	@include color(--text-color);
 	font-size: 32px;
 }
 
 .footer-social-icons .social-icons-menu li a:hover::before {
-	color: #57b7d7;
+	@include color(--link-color);
 }

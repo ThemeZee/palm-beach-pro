@@ -1,14 +1,10 @@
 .footer-widgets-background {
 	padding: 2em 0 0;
-	background: #242424;
+	@include background(--footer-widgets-background-color);
 }
 
 .footer-widgets {
 	margin-right: -2em;
-}
-
-.footer-widgets .widget {
-	margin: 0 0 2em;
 }
 
 /* Default: Four Column Footer Widgets */
@@ -42,31 +38,32 @@
 
 /* Footer Widget Styling */
 .footer-widgets .widget {
-	color: #fff;
+	margin: 0 0 2em;
+	@include color(--footer-widgets-text-color);
 }
 
 .footer-widgets .widget-title {
-	color: #fff;
+	@include color(--footer-widgets-text-color);
 }
 
 .footer-widgets .widget a:link,
 .footer-widgets .widget a:visited {
-	color: rgba(255, 255, 255, 0.75);
+	@include color(--footer-widgets-link-color);
 }
 
 .footer-widgets .widget a:hover,
 .footer-widgets .widget a:active {
-	color: rgba(255, 255, 255, 0.5);
+	@include color(--footer-widgets-link-hover-color);
 }
 
 .footer-widgets .widget_tag_cloud .tagcloud a:link,
 .footer-widgets .widget_tag_cloud .tagcloud a:visited {
-	color: #242424;
+	@include color(--button-text-color);
 }
 
 .footer-widgets .widget_tag_cloud .tagcloud a:hover,
 .footer-widgets .widget_tag_cloud .tagcloud a:active {
-	color: #fff;
+	@include color(--button-hover-text-color);
 }
 
 @media only screen and (max-width: 65em) {

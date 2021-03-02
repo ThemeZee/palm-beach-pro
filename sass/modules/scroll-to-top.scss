@@ -9,23 +9,24 @@
 	padding: 0;
 	right: 1em;
 	bottom: 1em;
-	color: #242424;
-	border: 1px solid #e5e5e5;
-	background: #f5f5f5;
+	border: 1px solid;
+	@include border-color(--button-border-color);
+	@include background(--button-color);
+	@include color(--button-text-color);
 	transition: none;
 }
 
 .scroll-to-top-button:focus,
 .scroll-to-top-button:active {
-	color: #242424;
-	border: 1px solid #e5e5e5;
-	background: #f5f5f5;
+	@include border-color(--button-border-color);
+	@include background(--button-color);
+	@include color(--button-text-color);
 }
 
 .scroll-to-top-button:hover {
-	color: #fff;
-	background: #57b7d7;
-	border-color: #57b7d7;
+	@include border-color(--button-hover-color);
+	@include background(--button-hover-color);
+	@include color(--button-hover-text-color);
 }
 
 .scroll-to-top-button::after {
