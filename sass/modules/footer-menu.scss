@@ -27,7 +27,7 @@
 
 .footer-navigation-menu a:link,
 .footer-navigation-menu a:visited {
-	@include color(--text-color);
+	@include color(--footer-text-color);
 	text-decoration: none;
 }
 

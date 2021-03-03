@@ -663,7 +663,7 @@
 .footer-navigation-menu a:link,
 .footer-navigation-menu a:visited {
 	color: #242424;
-	color: var(--text-color);
+	color: var(--footer-text-color);
 	text-decoration: none;
 }
 
