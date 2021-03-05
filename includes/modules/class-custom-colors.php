@@ -186,7 +186,7 @@ class Palm_Beach_Pro_Custom_Colors {
 		$wp_customize->add_setting( 'palm_beach_theme_options[link_color]', array(
 			'default'           => $default_options['link_color'],
 			'type'              => 'option',
-			'transport'         => 'refresh',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
@@ -202,7 +202,7 @@ class Palm_Beach_Pro_Custom_Colors {
 		$wp_customize->add_setting( 'palm_beach_theme_options[title_color]', array(
 			'default'           => $default_options['title_color'],
 			'type'              => 'option',
-			'transport'         => 'refresh',
+			'transport'         => 'postMessage',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );
 		$wp_customize->add_control( new WP_Customize_Color_Control(
