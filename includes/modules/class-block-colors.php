@@ -134,7 +134,7 @@ class Palm_Beach_Pro_Block_Colors {
 		// Add Section for Block Colors.
 		$wp_customize->add_section( 'palm_beach_pro_section_block_colors', array(
 			'title'    => esc_html__( 'Block Colors', 'palm-beach-pro' ),
-			'priority' => 55,
+			'priority' => 60,
 			'panel'    => 'palm_beach_options_panel',
 		) );
 

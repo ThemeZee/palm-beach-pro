@@ -143,7 +143,7 @@ class Palm_Beach_Pro_Custom_Colors {
 		// Add Section for Theme Colors.
 		$wp_customize->add_section( 'palm_beach_pro_section_colors', array(
 			'title'    => __( 'Theme Colors', 'palm-beach-pro' ),
-			'priority' => 60,
+			'priority' => 70,
 			'panel'    => 'palm_beach_options_panel',
 		) );
 

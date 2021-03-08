@@ -212,7 +212,7 @@ class Palm_Beach_Pro_Custom_Fonts {
 		// Add Section for Theme Fonts.
 		$wp_customize->add_section( 'palm_beach_pro_section_typography', array(
 			'title'    => __( 'Typography', 'palm-beach-pro' ),
-			'priority' => 70,
+			'priority' => 80,
 			'panel'    => 'palm_beach_options_panel',
 		) );
 
