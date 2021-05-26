@@ -5,22 +5,20 @@
 	@include background(--page-background-color);
 }
 
-.footer-social-icons .social-icons-menu {
-	text-align: center;
+.footer-social-icons-wrap .social-icons-menu {
+	justify-content: center;
 }
 
-.footer-social-icons .social-icons-menu li {
-	display: inline-block;
-	float: none;
-	margin: 0;
-}
-
-.footer-social-icons .social-icons-menu li a::before {
-	display: inline-block;
+.footer-social-icons-wrap .social-icons-navigation .social-icons-menu li a {
 	@include color(--text-color);
-	font-size: 32px;
 }
 
-.footer-social-icons .social-icons-menu li a:hover::before {
+.footer-social-icons-wrap .social-icons-navigation .social-icons-menu li a:hover,
+.footer-social-icons-wrap .social-icons-navigation .social-icons-menu li a:active {
 	@include color(--link-color);
+}
+
+.footer-social-icons-wrap .social-icons-navigation .social-icons-menu li a .icon {
+	width: 30px;
+	height: 30px;
 }
