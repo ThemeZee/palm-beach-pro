@@ -29,15 +29,10 @@
 	@include color(--button-hover-text-color);
 }
 
-.scroll-to-top-button::after {
-	display: inline-block;
-	margin: 0 0 0 3px;
-	content: '\f432';
+.scroll-to-top-button .icon {
+	margin: 0;
+	width: 24px;
+	height: 24px;
 	vertical-align: top;
-	text-decoration: inherit;
-	font-size: 32px;
-	font-family: 'Genericons';
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+	fill: currentColor;
 }
