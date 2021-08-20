@@ -29,7 +29,7 @@ class Palm_Beach_Pro_Footer_Line {
 		}
 
 		// Display footer navigation.
-		add_action( 'palm_beach_before_footer', array( __CLASS__, 'display_footer_social_menu' ), 10 );
+		add_action( 'palm_beach_before_footer', array( __CLASS__, 'display_footer_social_menu' ), 30 );
 
 		// Remove default footer text function and replace it with new one.
 		remove_action( 'palm_beach_footer_text', 'palm_beach_footer_text' );

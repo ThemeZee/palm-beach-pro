@@ -28,7 +28,7 @@ class Palm_Beach_Pro_Footer_Widgets {
 		}
 
 		// Display footer widgets.
-		add_action( 'palm_beach_before_footer', array( __CLASS__, 'display_widgets' ), 20 );
+		add_action( 'palm_beach_before_footer', array( __CLASS__, 'display_widgets' ), 40 );
 
 	}
 

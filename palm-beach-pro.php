@@ -116,6 +116,7 @@ class Palm_Beach_Pro {
 		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/modules/class-footer-widgets.php';
 		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/modules/class-header-bar.php';
 		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/modules/class-scroll-to-top.php';
+		require_once PALM_BEACH_PRO_PLUGIN_DIR . 'includes/modules/class-widget-areas.php';
 
 		// Include Magazine Widgets.
 		require_once PALM_BEACH_PRO_PLUGIN_DIR . '/includes/widgets/widget-magazine-columns.php';
