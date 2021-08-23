@@ -2,6 +2,10 @@
 Palm Beach Pro Changelog
 ===================================
 
+Version 2.0
+-----------------------------------
+* added extra widget areas
+
 Version 1.9
 -----------------------------------
 * added svg icons for social icons menu
