@@ -2,6 +2,11 @@
 Palm Beach Pro Changelog
 ===================================
 
+Version 2.0.1
+-----------------------------------
+* added Steam and Discord to social icons
+* updated Scroll to Top button script to use vanilla js
+
 Version 2.0
 -----------------------------------
 * added extra widget areas
