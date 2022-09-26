@@ -5,14 +5,14 @@ Plugin URI: http://themezee.com/addons/palm-beach-pro/
 Description: Adds additional features like custom colors, google fonts, widget areas and footer copyright to the Palm Beach theme.
 Author: ThemeZee
 Author URI: https://themezee.com/
-Version: 2.0.1
+Version: 2.0.2
 Text Domain: palm-beach-pro
 Domain Path: /languages/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Palm Beach Pro
-Copyright(C) 2021, ThemeZee.com - support@themezee.com
+Copyright(C) 2022, ThemeZee.com - support@themezee.com
 
 */
 
@@ -63,7 +63,7 @@ class Palm_Beach_Pro {
 		define( 'PALM_BEACH_PRO_NAME', 'Palm Beach Pro' );
 
 		// Define Version Number.
-		define( 'PALM_BEACH_PRO_VERSION', '2.0.1' );
+		define( 'PALM_BEACH_PRO_VERSION', '2.0.2' );
 
 		// Define Plugin Name.
 		define( 'PALM_BEACH_PRO_PRODUCT_ID', 89731 );

@@ -2,6 +2,10 @@
 Palm Beach Pro Changelog
 ===================================
 
+Version 2.0.2
+-----------------------------------
+* updated aria labels to improve accessibility
+
 Version 2.0.1
 -----------------------------------
 * added Steam and Discord to social icons
