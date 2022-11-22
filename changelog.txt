@@ -2,6 +2,10 @@
 Palm Beach Pro Changelog
 ===================================
 
+Version 2.0.3
+-----------------------------------
+* added Mastodon to social icons menu
+
 Version 2.0.2
 -----------------------------------
 * updated aria labels to improve accessibility
