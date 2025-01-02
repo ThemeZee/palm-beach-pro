@@ -1,0 +1,107 @@
+// Theme Width.
+$themeWidth: 1440px;
+
+// Content Width.
+$contentWidth: 880px;
+$wideBlockWidth: 1120px;
+
+// Fullwidth Template.
+$contentFullwidth: 1280px;
+$wideBlockFullwidth: 1440px;
+
+// Theme Colors
+$themeColors: (
+
+	// Block Editor Colors
+	--primary-color                  : #57b7d7,
+	--secondary-color                : #3e9ebe,
+	--tertiary-color                 : #2484a4,
+	--accent-color                   : #57d777,
+	--highlight-color                : #d75f57,
+	--light-gray-color               : #e4e4e4,
+	--gray-color                     : #646464,
+	--dark-gray-color                : #242424,
+
+	// Text Colors
+	--text-color                     : #242424,
+	--medium-text-color              : #646464,
+	--light-text-color               : #949494,
+	--dark-border-color              : #242424,
+	--medium-border-color            : #c4c4c4,
+	--light-border-color             : #e4e4e4,
+
+	// Links and Buttons
+	--link-color                     : #57b7d7,
+	--link-hover-color               : #242424,
+	--button-color                   : #f4f4f4,
+	--button-text-color              : #242424,
+	--button-border-color            : #e4e4e4,
+	--button-hover-color             : #57b7d7,
+	--button-hover-text-color        : #fff,
+
+	// Page
+	--page-background-color          : #fff,
+	--header-background-color        : #fff,
+	--site-title-color               : #242424,
+	--site-title-hover-color         : #57b7d7,
+
+	// Header Bar (Pro Version)
+	--header-bar-background-color    : #242424,
+	--header-bar-text-color          : #fff,
+	--header-bar-text-hover-color    : rgba(255, 255, 255, 0.5),
+
+	// Navigation
+	--navi-color                     : #242424,
+	--navi-hover-color               : #57b7d7,
+	--navi-border-color              : #e4e4e4,
+	--navi-submenu-color             : #f4f4f4,
+
+	// Titles
+	--title-color                    : #242424,
+	--title-hover-color              : #57b7d7,
+
+	// Widgets
+	--widget-title-color             : #242424,
+	--widget-title-hover-color       : #57b7d7,
+
+	// Footer Widgets (Pro Version)
+	--footer-widgets-background-color: #242424,
+	--footer-widgets-text-color      : #fff,
+	--footer-widgets-link-color      : rgba(255, 255, 255, 0.75),
+	--footer-widgets-link-hover-color: rgba(255, 255, 255, 0.5),
+
+	// Footer
+	--footer-background-color        : #fff,
+	--footer-text-color              : #242424,
+	--footer-border-color            : #e4e4e4,
+);
+
+// Theme Fonts
+$baseFont: "Hind", tahoma, arial, sans-serif;
+$titleFont: "Montserrat", verdana, arial, sans-serif;
+$themeFonts: (
+	--text-font        : $baseFont,
+	--title-font       : $titleFont,
+	--navi-font        : $baseFont,
+	--widget-title-font: $titleFont,
+);
+
+// Font Weight.
+$fontWeight: (
+	--title-font-weight: bold,
+	--navi-font-weight : normal,
+	--widget-title-font-weight: bold,
+);
+
+// Text Transform.
+$textTransform: (
+	--title-text-transform: uppercase,
+	--navi-text-transform: none,
+	--widget-title-text-transform: uppercase,
+);
+
+// Line Height.
+$lineHeight: (
+	--text-line-height : 1.6,
+	--title-line-height : 1.6,
+);

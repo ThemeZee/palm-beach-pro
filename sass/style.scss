@@ -11,46 +11,46 @@
 /*--------------------------------------------------------------
 # - CSS Variables
 --------------------------------------------------------------*/
-@import "../../../themes/palm-beach/sass/_variables";
-@import "../../../themes/palm-beach/sass/_mixins";
-@import "_root";
+@use "_variables";
+@use "_mixins";
+@use "_root";
 
 /*--------------------------------------------------------------
 # Header Bar
 --------------------------------------------------------------*/
-@import "modules/header-bar";
+@use "modules/header-bar";
 
 /*--------------------------------------------------------------
 # Widget Areas
 --------------------------------------------------------------*/
-@import "modules/widget-areas";
+@use "modules/widget-areas";
 
 /*--------------------------------------------------------------
 # Magazine Widgets
 --------------------------------------------------------------*/
-@import "modules/magazine-widgets";
+@use "modules/magazine-widgets";
 
 /*--------------------------------------------------------------
 # Social Icons
 --------------------------------------------------------------*/
-@import "modules/social-icons";
+@use "modules/social-icons";
 
 /*--------------------------------------------------------------
 # Footer Social Icons
 --------------------------------------------------------------*/
-@import "modules/footer-social-icons.scss";
+@use "modules/footer-social-icons.scss";
 
 /*--------------------------------------------------------------
 # Footer Widgets
 --------------------------------------------------------------*/
-@import "modules/footer-widgets";
+@use "modules/footer-widgets";
 
 /*--------------------------------------------------------------
 # Footer Menu
 --------------------------------------------------------------*/
-@import "modules/footer-menu";
+@use "modules/footer-menu";
 
 /*--------------------------------------------------------------
 # Scroll to Top Button
 --------------------------------------------------------------*/
-@import "modules/scroll-to-top";
+@use "modules/scroll-to-top";

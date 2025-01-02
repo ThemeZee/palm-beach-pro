@@ -1,3 +1,5 @@
+@use "../_mixins";
+
 .footer-navigation {
 	display: inline-block;
 	float: right;
@@ -27,13 +29,13 @@
 
 .footer-navigation-menu a:link,
 .footer-navigation-menu a:visited {
-	@include color(--footer-text-color);
+	@include mixins.color(--footer-text-color);
 	text-decoration: none;
 }
 
 .footer-navigation-menu a:hover,
 .footer-navigation-menu a:active {
-	@include color(--link-color);
+	@include mixins.color(--link-color);
 }
 
 @media only screen and (max-width: 60em) {

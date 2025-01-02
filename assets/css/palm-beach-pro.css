@@ -111,12 +111,12 @@
 	fill: var(--header-bar-text-hover-color);
 }
 
-.secondary-menu-toggle[aria-expanded="true"] .icon-menu,
-.secondary-menu-toggle[aria-expanded="false"] .icon-close {
+.secondary-menu-toggle[aria-expanded=true] .icon-menu,
+.secondary-menu-toggle[aria-expanded=false] .icon-close {
 	display: none;
 }
 
-.secondary-menu-toggle[aria-expanded="true"] .icon-close {
+.secondary-menu-toggle[aria-expanded=true] .icon-close {
 	display: inline-block;
 }
 
@@ -327,7 +327,6 @@
 		fill: var(--header-bar-text-hover-color);
 	}
 }
-
 /*--------------------------------------------------------------
 # Widget Areas
 --------------------------------------------------------------*/
@@ -357,7 +356,6 @@
 		padding: 0 2em;
 	}
 }
-
 @media only screen and (max-width: 30em) {
 	.before-header-widget-area,
 	.after-header-widget-area {
@@ -368,7 +366,6 @@
 		padding: 0 1.5em;
 	}
 }
-
 /*--------------------------------------------------------------
 # Magazine Widgets
 --------------------------------------------------------------*/
@@ -436,25 +433,21 @@
 		display: none;
 	}
 }
-
 @media only screen and (max-width: 60em) {
 	.widget-magazine-horizontal-box .large-post .entry-content .more-link {
 		display: none;
 	}
 }
-
 @media only screen and (max-width: 50em) {
 	.widget-magazine-horizontal-box .large-post .entry-content {
 		display: none;
 	}
 }
-
 @media only screen and (max-width: 45em) {
 	.widget-magazine-vertical-box .large-post .entry-content {
 		display: none;
 	}
 }
-
 @media only screen and (max-width: 35em) {
 	/* Magazine Posts Columns Widget */
 	.widget-magazine-columns .magazine-column-left,
@@ -494,7 +487,6 @@
 		display: block;
 	}
 }
-
 /*--------------------------------------------------------------
 # Social Icons
 --------------------------------------------------------------*/
@@ -664,7 +656,6 @@
 		clear: left;
 	}
 }
-
 @media only screen and (max-width: 50em) {
 	.footer-widgets-background {
 		padding: 1.5em 0 0;
@@ -685,7 +676,6 @@
 		width: 100%;
 	}
 }
-
 @media only screen and (max-width: 35em) {
 	.footer-widgets {
 		margin-right: 0;
@@ -697,7 +687,6 @@
 		width: 100%;
 	}
 }
-
 /*--------------------------------------------------------------
 # Footer Menu
 --------------------------------------------------------------*/
@@ -757,14 +746,12 @@
 		display: inline-block;
 	}
 }
-
 @media only screen and (max-width: 40em) {
 	.footer-navigation-menu li,
 	.footer-navigation-menu a {
 		display: block;
 	}
 }
-
 @media only screen and (max-width: 35em) {
 	.footer-social-icons-wrap {
 		padding: 1.5em 0;
@@ -774,7 +761,6 @@
 		font-size: 28px;
 	}
 }
-
 @media only screen and (max-width: 25em) {
 	.footer-social-icons-wrap {
 		padding: 1em 0;
@@ -784,7 +770,6 @@
 		font-size: 24px;
 	}
 }
-
 /*--------------------------------------------------------------
 # Scroll to Top Button
 --------------------------------------------------------------*/

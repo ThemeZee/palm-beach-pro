@@ -1,8 +1,10 @@
+@use "../_mixins";
+
 .footer-social-icons-wrap {
 	padding: 2em 0;
 	border-top: 1px solid;
-	@include border-color(--light-border-color);
-	@include background(--page-background-color);
+	@include mixins.border-color(--light-border-color);
+	@include mixins.background(--page-background-color);
 }
 
 .footer-social-icons-wrap .social-icons-menu {
@@ -10,12 +12,12 @@
 }
 
 .footer-social-icons-wrap .social-icons-navigation .social-icons-menu li a {
-	@include color(--text-color);
+	@include mixins.color(--text-color);
 }
 
 .footer-social-icons-wrap .social-icons-navigation .social-icons-menu li a:hover,
 .footer-social-icons-wrap .social-icons-navigation .social-icons-menu li a:active {
-	@include color(--link-color);
+	@include mixins.color(--link-color);
 }
 
 .footer-social-icons-wrap .social-icons-navigation .social-icons-menu li a .icon {
