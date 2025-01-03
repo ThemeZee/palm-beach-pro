@@ -2,6 +2,10 @@
 Palm Beach Pro Changelog
 ===================================
 
+Version 2.0.6
+-----------------------------------
+* improved tooling and code styling
+
 Version 2.0.5
 -----------------------------------
 * added X to social icons menu
