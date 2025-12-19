@@ -2,6 +2,10 @@
 Palm Beach Pro Changelog
 ===================================
 
+Version 2.0.7
+-----------------------------------
+* added Bluesky to social icons menu
+
 Version 2.0.6
 -----------------------------------
 * improved tooling and code styling
